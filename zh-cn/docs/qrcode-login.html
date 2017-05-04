@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>mops开发文档</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="扫码登录设计原理每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器 流程 打开登录页面, 点击扫码登录 APP扫码, 拿到一个URL, 截取最后部分的ticket 调用接口, 传递ticket, 告知服务器">
+<meta property="og:type" content="website">
+<meta property="og:title" content="mops开发文档">
+<meta property="og:url" content="https://haolianluo.github.io/zh-cn/docs/qrcode-login.html">
+<meta property="og:site_name" content="mops开发文档">
+<meta property="og:description" content="扫码登录设计原理每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器 流程 打开登录页面, 点击扫码登录 APP扫码, 拿到一个URL, 截取最后部分的ticket 调用接口, 传递ticket, 告知服务器">
+<meta property="og:updated_time" content="2017-05-04T13:43:56.509Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mops开发文档">
+<meta name="twitter:description" content="扫码登录设计原理每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器 流程 打开登录页面, 点击扫码登录 APP扫码, 拿到一个URL, 截取最后部分的ticket 调用接口, 传递ticket, 告知服务器">
+  
+    <link rel="alternate" href="/atom.xml" title="mops开发文档" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">mops开发文档</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://haolianluo.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/zh-cn/docs/qrcode-login.html" class="article-date">
+  <time datetime="2017-05-04T13:43:56.509Z" itemprop="datePublished">2017-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- --- title: 扫码登录 -->
+<h1 id="扫码登录"><a href="#扫码登录" class="headerlink" title="扫码登录"></a>扫码登录</h1><h2 id="设计原理"><a href="#设计原理" class="headerlink" title="设计原理"></a>设计原理</h2><p>每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,<br>APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器</p>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ul>
+<li>打开登录页面, 点击扫码登录</li>
+<li>APP扫码, 拿到一个URL, 截取最后部分的ticket</li>
+<li>调用接口, 传递ticket, 告知服务器登录状态</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://haolianluo.github.io/zh-cn/docs/qrcode-login.html" data-id="cj2agqh0c0005ut5yf4d98s5z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 zacksleo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

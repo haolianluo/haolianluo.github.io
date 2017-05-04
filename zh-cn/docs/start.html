@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>mops开发文档</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="为什么对接用户中心 按照以往的做法, 每个项目会有一套自己的账号体系, 彼此之间没有联络, 用户使用时, 需要在每个项目上单独注册账号, 管理个人信息 使用用户中心可以实现统一认证, 统一授权, 统一管理 用户只注册一次, 即可使用联络旗下所有产品, 无需重复注册 快速登录, 用户登录了一个应用, 其他应用无需重复登录, 可以做到一键登录 用户信息只存放在一处, 便于统一管理和安全性维护 用户信">
+<meta property="og:type" content="website">
+<meta property="og:title" content="mops开发文档">
+<meta property="og:url" content="https://haolianluo.github.io/zh-cn/docs/start.html">
+<meta property="og:site_name" content="mops开发文档">
+<meta property="og:description" content="为什么对接用户中心 按照以往的做法, 每个项目会有一套自己的账号体系, 彼此之间没有联络, 用户使用时, 需要在每个项目上单独注册账号, 管理个人信息 使用用户中心可以实现统一认证, 统一授权, 统一管理 用户只注册一次, 即可使用联络旗下所有产品, 无需重复注册 快速登录, 用户登录了一个应用, 其他应用无需重复登录, 可以做到一键登录 用户信息只存放在一处, 便于统一管理和安全性维护 用户信">
+<meta property="og:updated_time" content="2017-05-04T13:43:56.509Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mops开发文档">
+<meta name="twitter:description" content="为什么对接用户中心 按照以往的做法, 每个项目会有一套自己的账号体系, 彼此之间没有联络, 用户使用时, 需要在每个项目上单独注册账号, 管理个人信息 使用用户中心可以实现统一认证, 统一授权, 统一管理 用户只注册一次, 即可使用联络旗下所有产品, 无需重复注册 快速登录, 用户登录了一个应用, 其他应用无需重复登录, 可以做到一键登录 用户信息只存放在一处, 便于统一管理和安全性维护 用户信">
+  
+    <link rel="alternate" href="/atom.xml" title="mops开发文档" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">mops开发文档</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://haolianluo.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/zh-cn/docs/start.html" class="article-date">
+  <time datetime="2017-05-04T13:43:56.509Z" itemprop="datePublished">2017-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- --- title: 快速上手 -->
+<h2 id="为什么对接用户中心"><a href="#为什么对接用户中心" class="headerlink" title="为什么对接用户中心"></a>为什么对接用户中心</h2><ul>
+<li>按照以往的做法, 每个项目会有一套自己的账号体系, 彼此之间没有联络, 用户使用时, 需要在每个项目上单独注册账号, 管理个人信息</li>
+<li>使用用户中心可以实现统一认证, 统一授权, 统一管理</li>
+<li>用户只注册一次, 即可使用联络旗下所有产品, 无需重复注册</li>
+<li>快速登录, 用户登录了一个应用, 其他应用无需重复登录, 可以做到一键登录</li>
+<li>用户信息只存放在一处, 便于统一管理和安全性维护</li>
+<li>用户信息安全,  风险管控, 信息管理统一由用户中心处理, 其他项目无需重复开发, 降低开发成本</li>
+<li>还可以绑定QQ, 微信, 微博等社交绑定, 进行快速登录</li>
+</ul>
+<h2 id="Web如何接入用户中心"><a href="#Web如何接入用户中心" class="headerlink" title="Web如何接入用户中心"></a>Web如何接入用户中心</h2><h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><ul>
+<li><ol>
+<li>用户点击注册时, 自动跳转到用户中心统一注册地址, 并携带redirect_url参数, 表明回跳地址, 如<br><code>https://mops-dev-usercenter.lianluo.com:882/oauth2/signup?redirect_url=https://mops-dev.lianluo.com/site/login</code></li>
+</ol>
+</li>
+<li><ol>
+<li>用户注册成功, 会自动回跳回来, 即注册成功跳转到本网站的登录处</li>
+</ol>
+</li>
+</ul>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><ul>
+<li><ol>
+<li>在登录(site/login)处, 自动跳转到OAuth2登录地址, 如<code>site/auth</code></li>
+</ol>
+</li>
+<li><ol>
+<li>请求授权码(authorization_code), 见  <a href="design">授权码模式</a></li>
+</ol>
+</li>
+<li><ol>
+<li>通过拿到的授权码, 获取访问令牌(access_token) 见  <a href="design">授权码模式</a></li>
+</ol>
+</li>
+<li><ol>
+<li>通过令牌访问用户信息, 获取union_id</li>
+</ol>
+</li>
+<li><ol>
+<li>通过union_id判断用户是否存在, 若用户存在记录, 则自动登录; 若不存在, 则执行注册+登录</li>
+</ol>
+</li>
+<li><ol>
+<li>union_id需要存储在服务端, 以便知道用户是否登录过, 如使用<code>user_auth</code>表存储, 表结构</li>
+</ol>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th>类型</th>
+<th>备注</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td>int(11)</td>
+<td>主键</td>
+<td>10</td>
+</tr>
+<tr>
+<td style="text-align:center">user_id</td>
+<td>int(11)</td>
+<td>用户ID</td>
+<td>3</td>
+</tr>
+<tr>
+<td style="text-align:center">source</td>
+<td>varchar(255)</td>
+<td>来源</td>
+<td>lianluo</td>
+</tr>
+<tr>
+<td style="text-align:center">source_id</td>
+<td>varchar(255)</td>
+<td>union_id</td>
+<td>AQAe4DrBlhnISCKKfNB791OPI8lBf-c-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="APP如何接入用户中心"><a href="#APP如何接入用户中心" class="headerlink" title="APP如何接入用户中心"></a>APP如何接入用户中心</h2><p>APP端访问用户中心的接口, 均需要使用访问令牌进行认证, 见<a href="design">客户端模式</a></p>
+<p>获取到访问令牌后, 所有接口URL中应该携带access_token字段, 用户中心会自动进行认证</p>
+<p>如果在调用下面的接口时, 出现认证失败(状态码为401, 提示信息为You are requesting with an invalid credential.), 此时令牌失效, 应该重新获取令牌</p>
+<h3 id="注册-1"><a href="#注册-1" class="headerlink" title="注册"></a>注册</h3><ul>
+<li><ol>
+<li>获取手机验证码</li>
+</ol>
+</li>
+<li><ol>
+<li>调用注册接口</li>
+</ol>
+</li>
+</ul>
+<h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><ul>
+<li><ol>
+<li>调用修改密码接口</li>
+</ol>
+</li>
+</ul>
+<h3 id="重置密码"><a href="#重置密码" class="headerlink" title="重置密码"></a>重置密码</h3><ul>
+<li><ol>
+<li>获取手机验证码</li>
+</ol>
+</li>
+<li><ol>
+<li>调用重置密码接口</li>
+</ol>
+</li>
+</ul>
+<h3 id="针对PHP中-Yii2框架的认证组件"><a href="#针对PHP中-Yii2框架的认证组件" class="headerlink" title="针对PHP中 Yii2框架的认证组件"></a>针对PHP中 Yii2框架的认证组件</h3><ul>
+<li>使用composer 安装: <code>composer require zacksleo/yii2-authclient</code> <ul>
+<li>更多内容见 <a href="https://packagist.org/packages/zacksleo/yii2-authclient" target="_blank" rel="external">https://packagist.org/packages/zacksleo/yii2-authclient</a></li>
+</ul>
+</li>
+</ul>
+<p>接口详细见<a href="api">接口文档</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://haolianluo.github.io/zh-cn/docs/start.html" data-id="cj2agqh060003ut5yd57qaejp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 zacksleo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
