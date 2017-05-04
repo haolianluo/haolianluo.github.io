@@ -1,93 +1,163 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
+  <title>Mops Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://haolianluo.github.io/zh-cn/docs/design.html">
+  <!-- Alternative links -->
   
-  <title>mops开发文档</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/design.html">
+    
+      <link rel="alternative" hreflang="en" href="http://haolianluo.github.io/en/docs/design.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+  <link rel="manifest" href="/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!-- CSS -->
+  <!-- build:css build/css/easywechat.css -->
+  <link rel="stylesheet" href="/css/easywechat.css">
+  <!-- endbuild -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Mops Docs">
+  <!-- Open Graph -->
   <meta name="description" content="[[TOC]] 设计思路 1.统一注册和认证, 用户信息放在一处托管 2.可使用 用户名/手机号/邮箱 其中任何一个作为认证username 3.会员通过union_id字段来实现ID的统一 4.接口授权遵循OAuth2.0规范 5.接口实现遵循RESTful规范  准备工作 在用户中心由管理员分配应用ID和应用密钥  APP端认证流程  首先通过客户端模式（client_credentials">
 <meta property="og:type" content="website">
-<meta property="og:title" content="mops开发文档">
-<meta property="og:url" content="https://haolianluo.github.io/zh-cn/docs/design.html">
-<meta property="og:site_name" content="mops开发文档">
+<meta property="og:title" content="Mops Docs">
+<meta property="og:url" content="http://haolianluo.github.io/zh-cn/docs/design.html">
+<meta property="og:site_name" content="Mops Docs">
 <meta property="og:description" content="[[TOC]] 设计思路 1.统一注册和认证, 用户信息放在一处托管 2.可使用 用户名/手机号/邮箱 其中任何一个作为认证username 3.会员通过union_id字段来实现ID的统一 4.接口授权遵循OAuth2.0规范 5.接口实现遵循RESTful规范  准备工作 在用户中心由管理员分配应用ID和应用密钥  APP端认证流程  首先通过客户端模式（client_credentials">
-<meta property="og:updated_time" content="2017-05-04T14:54:40.374Z">
+<meta property="og:updated_time" content="2017-05-04T14:58:11.817Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mops开发文档">
+<meta name="twitter:title" content="Mops Docs">
 <meta name="twitter:description" content="[[TOC]] 设计思路 1.统一注册和认证, 用户信息放在一处托管 2.可使用 用户名/手机号/邮箱 其中任何一个作为认证username 3.会员通过union_id字段来实现ID的统一 4.接口授权遵循OAuth2.0规范 5.接口实现遵循RESTful规范  准备工作 在用户中心由管理员分配应用ID和应用密钥  APP端认证流程  首先通过客户端模式（client_credentials">
-  
-    <link rel="alternate" href="/atom.xml" title="mops开发文档" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+  <!-- Swiftype -->
+  <meta class="swiftype" name="title" data-type="string" content="Mops Docs">
+  <!-- Google Analytics -->
   
 
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2ef84bd0d61ef3fd6f5626bbffe75209";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="baidu-site-verification" content="tBkeSW2PJg" />
+  <meta name="baidu-site-verification" content="AADzpZ5myL" />
+  <meta name="google-site-verification" content="Q3yeKP4X_byNBAGuf8PhwO7vNYUgo2AnJUY9uwWn8tk" />
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2163469583563094",
+    enable_page_level_ads: true
+  });
+</script>
 </head>
-
-<body>
+<body class="">
   <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">mops开发文档</a>
-      </h1>
-      
+    
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">EasyWeChat</a>
+    </h1>
+    <nav id="main-nav">
+      <ul>
+        <li class="main-nav-item"><a href="/" class="main-nav-link">首页</a></li><li class="main-nav-item"><a href="/zh-cn/docs/" class="main-nav-link">文档</a></li><li class="main-nav-item"><a href="https://forum.easywechat.org" class="main-nav-link">论坛</a></li><li class="main-nav-item"><a href="https://laravist.com/series/peak-into-wechat-development-using-laravel" class="main-nav-link">视频</a></li><li class="main-nav-item"><a href="/news/" class="main-nav-link">动态</a></li><li class="main-nav-item"><a href="/donate.html" class="main-nav-link">打赏</a></li>
+        <li class="main-nav-item">
+          <a href="https://github.com/haolianluo/docs" class="main-nav-link">GitHub</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select">
+        
+          <option data-page-lang="zh-cn" value="zh-cn" selected>简体中文</option>
+        
+          <option data-page-lang="zh-cn" value="en">English</option>
+        
+      </select>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://haolianluo.github.io"></form>
-      </div>
+    
+    <div id="search-btn-wrap" class="main-nav-item">
+      <input type="text" class="st-default-search-input">
     </div>
+    
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
   </div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/zh-cn/docs/design.html" class="article-date">
-  <time datetime="2017-05-04T14:54:40.374Z" itemprop="datePublished">2017-05-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- --- title: 设计思路 -->
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name"></h1>
+                <a href="https://github.com/EasyWeChat/docs/edit/zh-cn/design.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+              </header>
+              <!-- AD -->
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- easywechat-top -->
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-client="ca-pub-2163469583563094"
+                   data-ad-slot="3400967944"
+                   data-ad-format="auto"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+              <!-- /AD -->
+              <div>
+                <strong class="sidebar-title">目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#设计思路"><span class="toc-text">设计思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#APP端认证流程"><span class="toc-text">APP端认证流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务端认证流程"><span class="toc-text">服务端认证流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#认证方式"><span class="toc-text">认证方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-授权码模式"><span class="toc-text">1. 授权码模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#第一步-用户点击登陆"><span class="toc-text">第一步, 用户点击登陆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二步-跳转到用户中心获取授权码页面"><span class="toc-text">第二步, 跳转到用户中心获取授权码页面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三步-获取成功后，浏览器会自动跳转回来，链接中会携带授权码-如"><span class="toc-text">第三步, 获取成功后，浏览器会自动跳转回来，链接中会携带授权码, 如</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#第四步-用授权码换取访问令牌"><span class="toc-text">第四步, 用授权码换取访问令牌</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第五步-用访问令牌获取用户信息，包括union-id和username"><span class="toc-text">第五步, 用访问令牌获取用户信息，包括union_id和username</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第六步-判断该用户是否在本地注册，如果有对应记录，自动登陆；如果没有记录，则自动注册并登录"><span class="toc-text">第六步, 判断该用户是否在本地注册，如果有对应记录，自动登陆；如果没有记录，则自动注册并登录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-客户端模式"><span class="toc-text">2. 客户端模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#第一步-APP从用户中心获取访问令牌"><span class="toc-text">第一步, APP从用户中心获取访问令牌</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二步-拿到令牌后，调用相关接口-接口URL最后加上access-token参数"><span class="toc-text">第二步, 拿到令牌后，调用相关接口, 接口URL最后加上access_token参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#刷新令牌"><span class="toc-text">刷新令牌</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-密码模式"><span class="toc-text">3. 密码模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#第一-APP调用接口，上传用户名和密码"><span class="toc-text">第一, APP调用接口，上传用户名和密码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二-服务端凭接收到的上述数据，以密码模式，从用户中心获取访问令牌"><span class="toc-text">第二, 服务端凭接收到的上述数据，以密码模式，从用户中心获取访问令牌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#名词解释"><span class="toc-text">名词解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端模式"><span class="toc-text">客户端模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问令牌"><span class="toc-text">访问令牌</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#union-id"><span class="toc-text">union_id</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#username"><span class="toc-text">username</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+              </div>
+              <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
+                <!-- --- title: 设计思路 -->
 <p>[[<em>TOC</em>]]</p>
-<h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><ul>
+<h2 id="设计思路" class="article-heading"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路<a class="article-anchor" href="#设计思路" aria-hidden="true"></a></h2><ul>
 <li>1.统一注册和认证, 用户信息放在一处托管</li>
 <li>2.可使用 用户名/手机号/邮箱 其中任何一个作为认证<strong>username</strong></li>
 <li>3.会员通过union_id字段来实现ID的统一</li>
 <li>4.接口授权遵循OAuth2.0规范</li>
 <li>5.接口实现遵循RESTful规范</li>
 </ul>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<h2 id="准备工作" class="article-heading"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作<a class="article-anchor" href="#准备工作" aria-hidden="true"></a></h2><ol>
 <li>在用户中心由管理员分配应用ID和应用密钥</li>
 </ol>
-<h2 id="APP端认证流程"><a href="#APP端认证流程" class="headerlink" title="APP端认证流程"></a>APP端认证流程</h2><ul>
+<h2 id="APP端认证流程" class="article-heading"><a href="#APP端认证流程" class="headerlink" title="APP端认证流程"></a>APP端认证流程<a class="article-anchor" href="#APP端认证流程" aria-hidden="true"></a></h2><ul>
 <li><ol>
 <li>首先通过<strong>客户端模式</strong>（client_credentials） 授权方式获取<strong>访问令牌</strong>（access_token）</li>
 </ol>
@@ -97,10 +167,10 @@
 </ol>
 </li>
 </ul>
-<h2 id="服务端认证流程"><a href="#服务端认证流程" class="headerlink" title="服务端认证流程"></a>服务端认证流程</h2><p>分为两种情况, 分别为授权码模式和密码模式</p>
-<h2 id="认证方式"><a href="#认证方式" class="headerlink" title="认证方式"></a>认证方式</h2><p>用户中心地址为: <code>https://mops-dev-usercenter.lianluo.com:882/</code></p>
-<h3 id="1-授权码模式"><a href="#1-授权码模式" class="headerlink" title="1. 授权码模式"></a>1. 授权码模式</h3><p>该模式用于页面中交互授权，如PC端登陆，假设当前网站地址为 <code>https://demo.com</code>, 流程如下</p>
-<h4 id="第一步-用户点击登陆"><a href="#第一步-用户点击登陆" class="headerlink" title="第一步, 用户点击登陆"></a>第一步, 用户点击登陆</h4><h4 id="第二步-跳转到用户中心获取授权码页面"><a href="#第二步-跳转到用户中心获取授权码页面" class="headerlink" title="第二步, 跳转到用户中心获取授权码页面"></a>第二步, 跳转到用户中心获取授权码页面</h4><ul>
+<h2 id="服务端认证流程" class="article-heading"><a href="#服务端认证流程" class="headerlink" title="服务端认证流程"></a>服务端认证流程<a class="article-anchor" href="#服务端认证流程" aria-hidden="true"></a></h2><p>分为两种情况, 分别为授权码模式和密码模式</p>
+<h2 id="认证方式" class="article-heading"><a href="#认证方式" class="headerlink" title="认证方式"></a>认证方式<a class="article-anchor" href="#认证方式" aria-hidden="true"></a></h2><p>用户中心地址为: <code>https://mops-dev-usercenter.lianluo.com:882/</code></p>
+<h3 id="1-授权码模式" class="article-heading"><a href="#1-授权码模式" class="headerlink" title="1. 授权码模式"></a>1. 授权码模式<a class="article-anchor" href="#1-授权码模式" aria-hidden="true"></a></h3><p>该模式用于页面中交互授权，如PC端登陆，假设当前网站地址为 <code>https://demo.com</code>, 流程如下</p>
+<h4 id="第一步-用户点击登陆" class="article-heading"><a href="#第一步-用户点击登陆" class="headerlink" title="第一步, 用户点击登陆"></a>第一步, 用户点击登陆<a class="article-anchor" href="#第一步-用户点击登陆" aria-hidden="true"></a></h4><h4 id="第二步-跳转到用户中心获取授权码页面" class="article-heading"><a href="#第二步-跳转到用户中心获取授权码页面" class="headerlink" title="第二步, 跳转到用户中心获取授权码页面"></a>第二步, 跳转到用户中心获取授权码页面<a class="article-anchor" href="#第二步-跳转到用户中心获取授权码页面" aria-hidden="true"></a></h4><ul>
 <li>入口地址 /oauth2/auth</li>
 <li><p>client_id: 客户端ID, 在用户中心后台申请,</p>
 <ul>
@@ -109,17 +179,17 @@
 <li>state 自定义状态编码</li>
 </ul>
 <p>示例: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://mops-dev-usercenter.lianluo.com:882/oauth2/auth?client_id=4f5d7cb8-a8f2-33dab-95b1-e8ddca748a35&amp;response_type=code&amp;redirect_uri=https://demo.com/site/auth?authclient=lianluo&amp;xoauth_displayname=联络推送&amp;state=86a1f0d67c5633ab23d0c1ff8968d810ac6f77e8de7d420b7d496e81821ea34f</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">https://mops-dev-usercenter.lianluo.com:882/oauth2/auth?client_id=4f5d7cb8-a8f2-33dab-95b1-e8ddca748a35&amp;response_type=code&amp;redirect_uri=https://demo.com/site/auth?authclient=lianluo&amp;xoauth_displayname=联络推送&amp;state=86a1f0d67c5633ab23d0c1ff8968d810ac6f77e8de7d420b7d496e81821ea34f</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="第三步-获取成功后，浏览器会自动跳转回来，链接中会携带授权码-如"><a href="#第三步-获取成功后，浏览器会自动跳转回来，链接中会携带授权码-如" class="headerlink" title="第三步, 获取成功后，浏览器会自动跳转回来，链接中会携带授权码, 如"></a>第三步, 获取成功后，浏览器会自动跳转回来，链接中会携带授权码, 如</h3><ul>
+<h3 id="第三步-获取成功后，浏览器会自动跳转回来，链接中会携带授权码-如" class="article-heading"><a href="#第三步-获取成功后，浏览器会自动跳转回来，链接中会携带授权码-如" class="headerlink" title="第三步, 获取成功后，浏览器会自动跳转回来，链接中会携带授权码, 如"></a>第三步, 获取成功后，浏览器会自动跳转回来，链接中会携带授权码, 如<a class="article-anchor" href="#第三步-获取成功后，浏览器会自动跳转回来，链接中会携带授权码-如" aria-hidden="true"></a></h3><ul>
 <li>回跳地址 <a href="https://demo.com/site/auth?authclient=lianluos" target="_blank" rel="external">https://demo.com/site/auth?authclient=lianluos</a></li>
 <li>code:  授权码, 用于获取访问令牌</li>
 <li>state 自定义状态编码</li>
 </ul>
 <p>示例: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://demo.com/site/auth?authclient=lianluos&amp;code=a8ca2ab5f6ff657bfea2dd9f97be748b3c646276&amp;state=9cf922d0943687e35c38a54d0b5eda42862926d55eb92bb5205bad917d978be4</div></pre></td></tr></table></figure>
-<h4 id="第四步-用授权码换取访问令牌"><a href="#第四步-用授权码换取访问令牌" class="headerlink" title="第四步, 用授权码换取访问令牌"></a>第四步, 用授权码换取访问令牌</h4><ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">https://demo.com/site/auth?authclient=lianluos&amp;code=a8ca2ab5f6ff657bfea2dd9f97be748b3c646276&amp;state=9cf922d0943687e35c38a54d0b5eda42862926d55eb92bb5205bad917d978be4</div></pre></td></tr></table></figure>
+<h4 id="第四步-用授权码换取访问令牌" class="article-heading"><a href="#第四步-用授权码换取访问令牌" class="headerlink" title="第四步, 用授权码换取访问令牌"></a>第四步, 用授权码换取访问令牌<a class="article-anchor" href="#第四步-用授权码换取访问令牌" aria-hidden="true"></a></h4><ul>
 <li><p><code>POST [/oauth2/token]</code></p>
 </li>
 <li><p>Request (application/json)  </p>
@@ -132,7 +202,7 @@
 }
 </code></pre></li>
 </ul>
-<h4 id="第五步-用访问令牌获取用户信息，包括union-id和username"><a href="#第五步-用访问令牌获取用户信息，包括union-id和username" class="headerlink" title="第五步, 用访问令牌获取用户信息，包括union_id和username"></a>第五步, 用访问令牌获取用户信息，包括union_id和username</h4><ul>
+<h4 id="第五步-用访问令牌获取用户信息，包括union-id和username" class="article-heading"><a href="#第五步-用访问令牌获取用户信息，包括union-id和username" class="headerlink" title="第五步, 用访问令牌获取用户信息，包括union_id和username"></a>第五步, 用访问令牌获取用户信息，包括union_id和username<a class="article-anchor" href="#第五步-用访问令牌获取用户信息，包括union-id和username" aria-hidden="true"></a></h4><ul>
 <li><p><code>GET  /api/oauth2/v1/users?access_token=b22f5fa1d35d2df2bd969b77fc99251fb3cc154b</code></p>
 </li>
 <li><p>Response 201 (application/json)   </p>
@@ -145,10 +215,10 @@
 }
 </code></pre></li>
 </ul>
-<h4 id="第六步-判断该用户是否在本地注册，如果有对应记录，自动登陆；如果没有记录，则自动注册并登录"><a href="#第六步-判断该用户是否在本地注册，如果有对应记录，自动登陆；如果没有记录，则自动注册并登录" class="headerlink" title="第六步, 判断该用户是否在本地注册，如果有对应记录，自动登陆；如果没有记录，则自动注册并登录"></a>第六步, 判断该用户是否在本地注册，如果有对应记录，自动登陆；如果没有记录，则自动注册并登录</h4><h3 id="2-客户端模式"><a href="#2-客户端模式" class="headerlink" title="2. 客户端模式"></a>2. 客户端模式</h3><p>统一入口地址为: <code>https://mops-dev.lianluo.com/account/v1/</code></p>
+<h4 id="第六步-判断该用户是否在本地注册，如果有对应记录，自动登陆；如果没有记录，则自动注册并登录" class="article-heading"><a href="#第六步-判断该用户是否在本地注册，如果有对应记录，自动登陆；如果没有记录，则自动注册并登录" class="headerlink" title="第六步, 判断该用户是否在本地注册，如果有对应记录，自动登陆；如果没有记录，则自动注册并登录"></a>第六步, 判断该用户是否在本地注册，如果有对应记录，自动登陆；如果没有记录，则自动注册并登录<a class="article-anchor" href="#第六步-判断该用户是否在本地注册，如果有对应记录，自动登陆；如果没有记录，则自动注册并登录" aria-hidden="true"></a></h4><h3 id="2-客户端模式" class="article-heading"><a href="#2-客户端模式" class="headerlink" title="2. 客户端模式"></a>2. 客户端模式<a class="article-anchor" href="#2-客户端模式" aria-hidden="true"></a></h3><p>统一入口地址为: <code>https://mops-dev.lianluo.com/account/v1/</code></p>
 <p>该模式常用于APP接口中，服务端需调用用户中心的接口，如获取验证码, 注册, 修改密码, 重置密码</p>
 <p>流程如下：</p>
-<h4 id="第一步-APP从用户中心获取访问令牌"><a href="#第一步-APP从用户中心获取访问令牌" class="headerlink" title="第一步, APP从用户中心获取访问令牌"></a>第一步, APP从用户中心获取访问令牌</h4><ul>
+<h4 id="第一步-APP从用户中心获取访问令牌" class="article-heading"><a href="#第一步-APP从用户中心获取访问令牌" class="headerlink" title="第一步, APP从用户中心获取访问令牌"></a>第一步, APP从用户中心获取访问令牌<a class="article-anchor" href="#第一步-APP从用户中心获取访问令牌" aria-hidden="true"></a></h4><ul>
 <li><p><code>POST  /tokens</code></p>
 </li>
 <li><p>Attributes</p>
@@ -174,7 +244,7 @@
 }
 </code></pre></li>
 </ul>
-<h4 id="第二步-拿到令牌后，调用相关接口-接口URL最后加上access-token参数"><a href="#第二步-拿到令牌后，调用相关接口-接口URL最后加上access-token参数" class="headerlink" title="第二步, 拿到令牌后，调用相关接口, 接口URL最后加上access_token参数"></a>第二步, 拿到令牌后，调用相关接口, 接口URL最后加上access_token参数</h4><h4 id="刷新令牌"><a href="#刷新令牌" class="headerlink" title="刷新令牌"></a>刷新令牌</h4><p>为保证使用较新和token, 可以使用refresh_token来刷新获取新的令牌</p>
+<h4 id="第二步-拿到令牌后，调用相关接口-接口URL最后加上access-token参数" class="article-heading"><a href="#第二步-拿到令牌后，调用相关接口-接口URL最后加上access-token参数" class="headerlink" title="第二步, 拿到令牌后，调用相关接口, 接口URL最后加上access_token参数"></a>第二步, 拿到令牌后，调用相关接口, 接口URL最后加上access_token参数<a class="article-anchor" href="#第二步-拿到令牌后，调用相关接口-接口URL最后加上access-token参数" aria-hidden="true"></a></h4><h4 id="刷新令牌" class="article-heading"><a href="#刷新令牌" class="headerlink" title="刷新令牌"></a>刷新令牌<a class="article-anchor" href="#刷新令牌" aria-hidden="true"></a></h4><p>为保证使用较新和token, 可以使用refresh_token来刷新获取新的令牌</p>
 <ul>
 <li><p><code>POST  /tokens</code></p>
 </li>
@@ -204,9 +274,9 @@
 }
 </code></pre></li>
 </ul>
-<h3 id="3-密码模式"><a href="#3-密码模式" class="headerlink" title="3. 密码模式"></a>3. 密码模式</h3><p>该模式用于服务端接口中，服务端需调用用户中心的接口，如查询用户信息</p>
+<h3 id="3-密码模式" class="article-heading"><a href="#3-密码模式" class="headerlink" title="3. 密码模式"></a>3. 密码模式<a class="article-anchor" href="#3-密码模式" aria-hidden="true"></a></h3><p>该模式用于服务端接口中，服务端需调用用户中心的接口，如查询用户信息</p>
 <p>流程如下：</p>
-<h4 id="第一-APP调用接口，上传用户名和密码"><a href="#第一-APP调用接口，上传用户名和密码" class="headerlink" title="第一, APP调用接口，上传用户名和密码"></a>第一, APP调用接口，上传用户名和密码</h4><h4 id="第二-服务端凭接收到的上述数据，以密码模式，从用户中心获取访问令牌"><a href="#第二-服务端凭接收到的上述数据，以密码模式，从用户中心获取访问令牌" class="headerlink" title="第二, 服务端凭接收到的上述数据，以密码模式，从用户中心获取访问令牌"></a>第二, 服务端凭接收到的上述数据，以密码模式，从用户中心获取访问令牌</h4><ul>
+<h4 id="第一-APP调用接口，上传用户名和密码" class="article-heading"><a href="#第一-APP调用接口，上传用户名和密码" class="headerlink" title="第一, APP调用接口，上传用户名和密码"></a>第一, APP调用接口，上传用户名和密码<a class="article-anchor" href="#第一-APP调用接口，上传用户名和密码" aria-hidden="true"></a></h4><h4 id="第二-服务端凭接收到的上述数据，以密码模式，从用户中心获取访问令牌" class="article-heading"><a href="#第二-服务端凭接收到的上述数据，以密码模式，从用户中心获取访问令牌" class="headerlink" title="第二, 服务端凭接收到的上述数据，以密码模式，从用户中心获取访问令牌"></a>第二, 服务端凭接收到的上述数据，以密码模式，从用户中心获取访问令牌<a class="article-anchor" href="#第二-服务端凭接收到的上述数据，以密码模式，从用户中心获取访问令牌" aria-hidden="true"></a></h4><ul>
 <li><p><code>POST  /tokens</code></p>
 </li>
 <li><p>Attributes</p>
@@ -237,11 +307,11 @@
 }
 </code></pre></li>
 </ul>
-<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="客户端模式"><a href="#客户端模式" class="headerlink" title="客户端模式"></a>客户端模式</h3><p>客户端模式（Client Credentials Grant）指客户端以自己的名义，而不是以用户的名义，向”服务提供商”进行认证。严格地说，客户端模式并不属于OAuth框架所要解决的问题。在这种模式中，用户直接向客户端注册，客户端以自己的名义要求”服务提供商”提供服务，其实不存在授权问题。</p>
-<h3 id="访问令牌"><a href="#访问令牌" class="headerlink" title="访问令牌"></a>访问令牌</h3><p>用于授权的口令, 与用户的密码不同。用户可以在登录的时候，指定授权层令牌的权限范围和有效期。</p>
-<h3 id="union-id"><a href="#union-id" class="headerlink" title="union_id"></a>union_id</h3><p>一段32位的字符串, 用于识别用户, 与平台无关,  唯一且保证通用<br>可根据union_id获取用户的基本信息，包括昵称、头像、性别、手机、邮箱等信息</p>
-<h3 id="username"><a href="#username" class="headerlink" title="username"></a>username</h3><p>用户名/手机号/邮箱 其中的任何一个, 其中用户名至少6位, 且必须有一个字母; 手机号为11位数字;</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<h2 id="名词解释" class="article-heading"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释<a class="article-anchor" href="#名词解释" aria-hidden="true"></a></h2><h3 id="客户端模式" class="article-heading"><a href="#客户端模式" class="headerlink" title="客户端模式"></a>客户端模式<a class="article-anchor" href="#客户端模式" aria-hidden="true"></a></h3><p>客户端模式（Client Credentials Grant）指客户端以自己的名义，而不是以用户的名义，向”服务提供商”进行认证。严格地说，客户端模式并不属于OAuth框架所要解决的问题。在这种模式中，用户直接向客户端注册，客户端以自己的名义要求”服务提供商”提供服务，其实不存在授权问题。</p>
+<h3 id="访问令牌" class="article-heading"><a href="#访问令牌" class="headerlink" title="访问令牌"></a>访问令牌<a class="article-anchor" href="#访问令牌" aria-hidden="true"></a></h3><p>用于授权的口令, 与用户的密码不同。用户可以在登录的时候，指定授权层令牌的权限范围和有效期。</p>
+<h3 id="union-id" class="article-heading"><a href="#union-id" class="headerlink" title="union_id"></a>union_id<a class="article-anchor" href="#union-id" aria-hidden="true"></a></h3><p>一段32位的字符串, 用于识别用户, 与平台无关,  唯一且保证通用<br>可根据union_id获取用户的基本信息，包括昵称、头像、性别、手机、邮箱等信息</p>
+<h3 id="username" class="article-heading"><a href="#username" class="headerlink" title="username"></a>username<a class="article-anchor" href="#username" aria-hidden="true"></a></h3><p>用户名/手机号/邮箱 其中的任何一个, 其中用户名至少6位, 且必须有一个字母; 手机号为11位数字;</p>
+<h2 id="参考资料" class="article-heading"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料<a class="article-anchor" href="#参考资料" aria-hidden="true"></a></h2><ul>
 <li><p><a href="http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html" target="_blank" rel="external">理解OAuth 2.0</a></p>
 </li>
 <li><p><a href="http://www.ruanyifeng.com/blog/2011/09/restful.html" target="_blank" rel="external">理解RESTful架构</a></p>
@@ -252,87 +322,108 @@
 </li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://haolianluo.github.io/zh-cn/docs/design.html" data-id="cj2aj9dxz0001uvy1rnl9ijhq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-  
-</article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/05/04/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
+                <div class="donate-btn text-center"><a href="/donate.html" target="_blank">我要打赏支持</a></div>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2017-05-04T14:58:11.817Z" itemprop="dateModified">上次更新：2017-05-04</time>
+                <a href="index.html" class="article-footer-next" title="概述"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <!-- AD -->
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- easywechat-sidebar -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2163469583563094"
+                 data-ad-slot="6354434345"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <!-- /AD -->
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">概述</a><a href="installation.html" class="sidebar-link">安装</a><a href="tutorial.html" class="sidebar-link">小教程</a><a href="configuration.html" class="sidebar-link">配置</a><a href="integration.html" class="sidebar-link">在框架中使用</a><a href="troubleshooting.html" class="sidebar-link">常见问题汇总</a><strong class="sidebar-title">基本使用</strong><a href="server.html" class="sidebar-link">服务端</a><a href="messages.html" class="sidebar-link">消息</a><a href="message-transfer.html" class="sidebar-link">多客服消息转发</a><a href="events.html" class="sidebar-link">事件</a><a href="broadcast.html" class="sidebar-link">群发消息</a><a href="notice.html" class="sidebar-link">模板消息</a><a href="user.html" class="sidebar-link">用户</a><a href="user-tag.html" class="sidebar-link">用户标签</a><a href="user-group.html" class="sidebar-link">用户组</a><a href="oauth.html" class="sidebar-link">网页授权</a><a href="material.html" class="sidebar-link">素材管理</a><a href="menu.html" class="sidebar-link">菜单</a><a href="js.html" class="sidebar-link">JSSDK</a><a href="payment.html" class="sidebar-link">支付</a><a href="merchant_payment.html" class="sidebar-link">企业支付</a><a href="lucky-money.html" class="sidebar-link">红包</a><a href="card.html" class="sidebar-link">卡券</a><a href="store.html" class="sidebar-link">小店</a><a href="poi.html" class="sidebar-link">门店</a><a href="staff.html" class="sidebar-link">客服</a><a href="anaylsis.html" class="sidebar-link">数据统计与分析</a><a href="qrcode.html" class="sidebar-link">二维码</a><a href="short-url.html" class="sidebar-link">短网址</a><a href="semantic.html" class="sidebar-link">语义理解</a><a href="reply.html" class="sidebar-link">自动回复</a><a href="open_platform.html" class="sidebar-link">开放平台</a><strong class="sidebar-title">自定义</strong><a href="access_token.html" class="sidebar-link">Access Token</a><a href="cache.html" class="sidebar-link">缓存</a><strong class="sidebar-title">其他</strong><a href="troubleshooting.html" class="sidebar-link">问题解答</a><a href="contributing.html" class="sidebar-link">贡献</a><a href="releases.html" class="sidebar-link">更新日志</a><a href="roadmap.html" class="sidebar-link">路线图</a></div>
 </aside>
+    </div>
+  </div>
+</div>
+  </div>
+  <footer id="footer">
+  <div class="wrapper">
+    <div class="inner">
+      <div class="friend-links">
+        
+        <a href="http://overtrue.me" target="_blank">overtrue.me</a>
+        
+        <a href="http://laravel.so" target="_blank">Laravel 技巧</a>
+        
+        <a href="https://laravist.com" target="_blank">Laravist 视频教程</a>
+        
+        <a href="https://phphub.org" target="_blank">PHPHub</a>
+        
+        <a href="http://laravelacademy.org" target="_blank">Laravel 学院</a>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 zacksleo<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      <div id="footer-copyright">
+        &copy; 2017 <a href="http://overtrue.me/" target="_blank">zacksleo</a><br>
+        Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+      </div>
+      <div id="footer-links">
+        <a href="http://weibo.com/" class="footer-link" target="_blank"><i class="fa fa-weibo"></i></a>
+        <a href="https://github.com/haolianluo/docs" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+        <a href="https://twitter.com/" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      </div>
     </div>
   </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">首页</a></li><li class="mobile-nav-item"><a href="/zh-cn/docs/" class="mobile-nav-link">文档</a></li><li class="mobile-nav-item"><a href="https://forum.easywechat.org" class="mobile-nav-link">论坛</a></li><li class="mobile-nav-item"><a href="https://laravist.com/series/peak-into-wechat-development-using-laravel" class="mobile-nav-link">视频</a></li><li class="mobile-nav-item"><a href="/news/" class="mobile-nav-link">动态</a></li><li class="mobile-nav-item"><a href="/donate.html" class="mobile-nav-link">打赏</a></li>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/haolianluo/docs" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
     
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="installation.html" class="mobile-nav-link">安装</a><a href="tutorial.html" class="mobile-nav-link">小教程</a><a href="configuration.html" class="mobile-nav-link">配置</a><a href="integration.html" class="mobile-nav-link">在框架中使用</a><a href="troubleshooting.html" class="mobile-nav-link">常见问题汇总</a><strong class="mobile-nav-title">基本使用</strong><a href="server.html" class="mobile-nav-link">服务端</a><a href="messages.html" class="mobile-nav-link">消息</a><a href="message-transfer.html" class="mobile-nav-link">多客服消息转发</a><a href="events.html" class="mobile-nav-link">事件</a><a href="broadcast.html" class="mobile-nav-link">群发消息</a><a href="notice.html" class="mobile-nav-link">模板消息</a><a href="user.html" class="mobile-nav-link">用户</a><a href="user-tag.html" class="mobile-nav-link">用户标签</a><a href="user-group.html" class="mobile-nav-link">用户组</a><a href="oauth.html" class="mobile-nav-link">网页授权</a><a href="material.html" class="mobile-nav-link">素材管理</a><a href="menu.html" class="mobile-nav-link">菜单</a><a href="js.html" class="mobile-nav-link">JSSDK</a><a href="payment.html" class="mobile-nav-link">支付</a><a href="merchant_payment.html" class="mobile-nav-link">企业支付</a><a href="lucky-money.html" class="mobile-nav-link">红包</a><a href="card.html" class="mobile-nav-link">卡券</a><a href="store.html" class="mobile-nav-link">小店</a><a href="poi.html" class="mobile-nav-link">门店</a><a href="staff.html" class="mobile-nav-link">客服</a><a href="anaylsis.html" class="mobile-nav-link">数据统计与分析</a><a href="qrcode.html" class="mobile-nav-link">二维码</a><a href="short-url.html" class="mobile-nav-link">短网址</a><a href="semantic.html" class="mobile-nav-link">语义理解</a><a href="reply.html" class="mobile-nav-link">自动回复</a><a href="open_platform.html" class="mobile-nav-link">开放平台</a><strong class="mobile-nav-title">自定义</strong><a href="access_token.html" class="mobile-nav-link">Access Token</a><a href="cache.html" class="mobile-nav-link">缓存</a><strong class="mobile-nav-title">其他</strong><a href="troubleshooting.html" class="mobile-nav-link">问题解答</a><a href="contributing.html" class="mobile-nav-link">贡献</a><a href="releases.html" class="mobile-nav-link">更新日志</a><a href="roadmap.html" class="mobile-nav-link">路线图</a>
+    
   </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="en">English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="//cdn.jsdelivr.net/retinajs/1.1.0/retina.min.js" async></script>
+
+<script src="/js/tab.js"></script>
+<!-- Swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
 </body>
 </html>
