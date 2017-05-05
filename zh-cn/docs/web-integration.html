@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://haolianluo.github.io/zh-cn/docs/qrcode-login.html">
+  <link rel="canonical" href="http://haolianluo.github.io/zh-cn/docs/web-integration.html">
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/qrcode-login.html">
+      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/web-integration.html">
     
   
   <!-- Icon -->
@@ -25,16 +25,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Mops Docs">
   <!-- Open Graph -->
-  <meta name="description" content="扫码登录设计原理每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器 流程 打开登录页面, 点击扫码登录 APP扫码, 拿到一个URL, 截取最后部分的ticket 调用接口, 传递ticket, 告知服务器">
+  <meta name="description" content="网站应用接入指南注册接入  用户点击注册时, 自动跳转到用户中心统一注册地址, 并携带redirect_url参数, 表明回跳地址, 如https://demo.com/oauth2/signup?redirect_url=https://yourseit.com/redirect/path    用户注册成功, 会自动回跳回来, 即注册成功跳转到本网站的登录处    登录接入  用户点击登录,">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mops Docs">
-<meta property="og:url" content="http://haolianluo.github.io/zh-cn/docs/qrcode-login.html">
+<meta property="og:url" content="http://haolianluo.github.io/zh-cn/docs/web-integration.html">
 <meta property="og:site_name" content="Mops Docs">
-<meta property="og:description" content="扫码登录设计原理每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器 流程 打开登录页面, 点击扫码登录 APP扫码, 拿到一个URL, 截取最后部分的ticket 调用接口, 传递ticket, 告知服务器">
+<meta property="og:description" content="网站应用接入指南注册接入  用户点击注册时, 自动跳转到用户中心统一注册地址, 并携带redirect_url参数, 表明回跳地址, 如https://demo.com/oauth2/signup?redirect_url=https://yourseit.com/redirect/path    用户注册成功, 会自动回跳回来, 即注册成功跳转到本网站的登录处    登录接入  用户点击登录,">
 <meta property="og:updated_time" content="2017-05-05T06:54:45.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mops Docs">
-<meta name="twitter:description" content="扫码登录设计原理每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器 流程 打开登录页面, 点击扫码登录 APP扫码, 拿到一个URL, 截取最后部分的ticket 调用接口, 传递ticket, 告知服务器">
+<meta name="twitter:description" content="网站应用接入指南注册接入  用户点击注册时, 自动跳转到用户中心统一注册地址, 并携带redirect_url参数, 表明回跳地址, 如https://demo.com/oauth2/signup?redirect_url=https://yourseit.com/redirect/path    用户注册成功, 会自动回跳回来, 即注册成功跳转到本网站的登录处    登录接入  用户点击登录,">
   <!-- Swiftype -->
   <meta class="swiftype" name="title" data-type="string" content="Mops Docs">
   <!-- Google Analytics -->
@@ -88,7 +88,7 @@
             <div class="inner">
               <header class="article-header">
                 <h1 class="article-title" itemprop="name"></h1>
-                <a href="https://github.com/haolianluo/docs/edit/zh-cn/qrcode-login.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+                <a href="https://github.com/haolianluo/docs/edit/zh-cn/web-integration.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
               </header>
               <!-- AD -->
               <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -104,17 +104,88 @@
               <!-- /AD -->
               <div>
                 <strong class="sidebar-title">目录</strong>
-                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#扫码登录"><span class="toc-text">扫码登录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设计原理"><span class="toc-text">设计原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流程"><span class="toc-text">流程</span></a></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#网站应用接入指南"><span class="toc-text">网站应用接入指南</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注册接入"><span class="toc-text">注册接入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#登录接入"><span class="toc-text">登录接入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#针对PHP中-Yii2框架的认证组件"><span class="toc-text">针对PHP中 Yii2框架的认证组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务端认证流程"><span class="toc-text">服务端认证流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OAuth2中的几种认证方式"><span class="toc-text">OAuth2中的几种认证方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#授权码模式"><span class="toc-text">授权码模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端模式"><span class="toc-text">客户端模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#刷新令牌"><span class="toc-text">刷新令牌</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#密码模式"><span class="toc-text">密码模式</span></a></li></ol>
               </div>
               <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
-                <!-- --- title: 扫码登录 -->
-<h1 id="扫码登录" class="article-heading"><a href="#扫码登录" class="headerlink" title="扫码登录"></a>扫码登录<a class="article-anchor" href="#扫码登录" aria-hidden="true"></a></h1><h2 id="设计原理" class="article-heading"><a href="#设计原理" class="headerlink" title="设计原理"></a>设计原理<a class="article-anchor" href="#设计原理" aria-hidden="true"></a></h2><p>每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,<br>APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器</p>
-<h2 id="流程" class="article-heading"><a href="#流程" class="headerlink" title="流程"></a>流程<a class="article-anchor" href="#流程" aria-hidden="true"></a></h2><ul>
-<li>打开登录页面, 点击扫码登录</li>
-<li>APP扫码, 拿到一个URL, 截取最后部分的ticket</li>
-<li>调用接口, 传递ticket, 告知服务器登录状态</li>
+                <h3 id="网站应用接入指南" class="article-heading"><a href="#网站应用接入指南" class="headerlink" title="网站应用接入指南"></a>网站应用接入指南<a class="article-anchor" href="#网站应用接入指南" aria-hidden="true"></a></h3><h3 id="注册接入" class="article-heading"><a href="#注册接入" class="headerlink" title="注册接入"></a>注册接入<a class="article-anchor" href="#注册接入" aria-hidden="true"></a></h3><ul>
+<li><ol>
+<li>用户点击注册时, 自动跳转到用户中心统一注册地址, 并携带redirect_url参数, 表明回跳地址, 如<br><code>https://demo.com/oauth2/signup?redirect_url=https://yourseit.com/redirect/path</code></li>
+</ol>
+</li>
+<li><ol>
+<li>用户注册成功, 会自动回跳回来, 即注册成功跳转到本网站的登录处</li>
+</ol>
+</li>
 </ul>
-
+<h3 id="登录接入" class="article-heading"><a href="#登录接入" class="headerlink" title="登录接入"></a>登录接入<a class="article-anchor" href="#登录接入" aria-hidden="true"></a></h3><ul>
+<li><ol>
+<li>用户点击登录, 跳转到<strong>用户中心</strong>的登录地址, <code>/oauth2/auth</code></li>
+</ol>
+</li>
+<li><ol>
+<li>请求授权码(authorization_code), 见  <a href="code-pattern">授权码模式</a></li>
+</ol>
+</li>
+<li><ol>
+<li>通过拿到的授权码, 获取访问令牌(access_token) 见  <a href="code-pattern">授权码模式</a></li>
+</ol>
+</li>
+<li><ol>
+<li>通过令牌访问用户信息, 获取union_id</li>
+</ol>
+</li>
+<li><ol>
+<li>通过union_id判断用户是否存在, 若用户存在记录, 则自动登录; 若不存在, 则执行注册+登录</li>
+</ol>
+</li>
+<li><ol>
+<li>union_id需要存储在服务端, 以便知道用户是否登录过, 如使用<code>user_auth</code>表存储, 表结构</li>
+</ol>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th>类型</th>
+<th>备注</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td>int(11)</td>
+<td>主键</td>
+<td>10</td>
+</tr>
+<tr>
+<td style="text-align:center">user_id</td>
+<td>int(11)</td>
+<td>用户ID</td>
+<td>3</td>
+</tr>
+<tr>
+<td style="text-align:center">source</td>
+<td>varchar(255)</td>
+<td>来源</td>
+<td>lianluo</td>
+</tr>
+<tr>
+<td style="text-align:center">source_id</td>
+<td>varchar(255)</td>
+<td>union_id</td>
+<td>AQAe4DrBlhnISCKKfNB791OPI8lBf-c-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="针对PHP中-Yii2框架的认证组件" class="article-heading"><a href="#针对PHP中-Yii2框架的认证组件" class="headerlink" title="针对PHP中 Yii2框架的认证组件"></a>针对PHP中 Yii2框架的认证组件<a class="article-anchor" href="#针对PHP中-Yii2框架的认证组件" aria-hidden="true"></a></h3><ul>
+<li>使用composer 安装: <code>composer require zacksleo/yii2-authclient</code> </li>
+<li>更多内容见 <a href="https://packagist.org/packages/zacksleo/yii2-authclient" target="_blank" rel="external">https://packagist.org/packages/zacksleo/yii2-authclient</a></li>
+</ul>
+<h2 id="服务端认证流程" class="article-heading"><a href="#服务端认证流程" class="headerlink" title="服务端认证流程"></a>服务端认证流程<a class="article-anchor" href="#服务端认证流程" aria-hidden="true"></a></h2><p>分为两种情况, 分别为授权码模式和密码模式</p>
+<h2 id="OAuth2中的几种认证方式" class="article-heading"><a href="#OAuth2中的几种认证方式" class="headerlink" title="OAuth2中的几种认证方式"></a>OAuth2中的几种认证方式<a class="article-anchor" href="#OAuth2中的几种认证方式" aria-hidden="true"></a></h2><p>用户中心地址为: <code>https://mops-ucenter.lianluo.com/</code></p>
+<h3 id="授权码模式" class="article-heading"><a href="#授权码模式" class="headerlink" title="授权码模式"></a><a href="code-pattern">授权码模式</a><a class="article-anchor" href="#授权码模式" aria-hidden="true"></a></h3><h3 id="客户端模式" class="article-heading"><a href="#客户端模式" class="headerlink" title="客户端模式"></a><a href="client-pattern">客户端模式</a><a class="article-anchor" href="#客户端模式" aria-hidden="true"></a></h3><h4 id="刷新令牌" class="article-heading"><a href="#刷新令牌" class="headerlink" title="刷新令牌"></a><a href="refresh-token">刷新令牌</a><a class="article-anchor" href="#刷新令牌" aria-hidden="true"></a></h4><h3 id="密码模式" class="article-heading"><a href="#密码模式" class="headerlink" title="密码模式"></a><a href="password-pattern">密码模式</a><a class="article-anchor" href="#密码模式" aria-hidden="true"></a></h3>
 
               </div>
               <footer class="article-footer">

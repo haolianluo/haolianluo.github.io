@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://haolianluo.github.io/zh-cn/docs/qrcode-login.html">
+  <link rel="canonical" href="http://haolianluo.github.io/zh-cn/docs/app-integration.html">
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/qrcode-login.html">
+      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/app-integration.html">
     
   
   <!-- Icon -->
@@ -25,16 +25,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Mops Docs">
   <!-- Open Graph -->
-  <meta name="description" content="扫码登录设计原理每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器 流程 打开登录页面, 点击扫码登录 APP扫码, 拿到一个URL, 截取最后部分的ticket 调用接口, 传递ticket, 告知服务器">
+  <meta name="description" content="移动应用接入指南优先建议使用用户中心SDK进行接入">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mops Docs">
-<meta property="og:url" content="http://haolianluo.github.io/zh-cn/docs/qrcode-login.html">
+<meta property="og:url" content="http://haolianluo.github.io/zh-cn/docs/app-integration.html">
 <meta property="og:site_name" content="Mops Docs">
-<meta property="og:description" content="扫码登录设计原理每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器 流程 打开登录页面, 点击扫码登录 APP扫码, 拿到一个URL, 截取最后部分的ticket 调用接口, 传递ticket, 告知服务器">
+<meta property="og:description" content="移动应用接入指南优先建议使用用户中心SDK进行接入">
 <meta property="og:updated_time" content="2017-05-05T06:54:45.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mops Docs">
-<meta name="twitter:description" content="扫码登录设计原理每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器 流程 打开登录页面, 点击扫码登录 APP扫码, 拿到一个URL, 截取最后部分的ticket 调用接口, 传递ticket, 告知服务器">
+<meta name="twitter:description" content="移动应用接入指南优先建议使用用户中心SDK进行接入">
   <!-- Swiftype -->
   <meta class="swiftype" name="title" data-type="string" content="Mops Docs">
   <!-- Google Analytics -->
@@ -88,7 +88,7 @@
             <div class="inner">
               <header class="article-header">
                 <h1 class="article-title" itemprop="name"></h1>
-                <a href="https://github.com/haolianluo/docs/edit/zh-cn/qrcode-login.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+                <a href="https://github.com/haolianluo/docs/edit/zh-cn/app-integration.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
               </header>
               <!-- AD -->
               <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -104,16 +104,10 @@
               <!-- /AD -->
               <div>
                 <strong class="sidebar-title">目录</strong>
-                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#扫码登录"><span class="toc-text">扫码登录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设计原理"><span class="toc-text">设计原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流程"><span class="toc-text">流程</span></a></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#移动应用接入指南"><span class="toc-text">移动应用接入指南</span></a></li></ol>
               </div>
               <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
-                <!-- --- title: 扫码登录 -->
-<h1 id="扫码登录" class="article-heading"><a href="#扫码登录" class="headerlink" title="扫码登录"></a>扫码登录<a class="article-anchor" href="#扫码登录" aria-hidden="true"></a></h1><h2 id="设计原理" class="article-heading"><a href="#设计原理" class="headerlink" title="设计原理"></a>设计原理<a class="article-anchor" href="#设计原理" aria-hidden="true"></a></h2><p>每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,<br>APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器</p>
-<h2 id="流程" class="article-heading"><a href="#流程" class="headerlink" title="流程"></a>流程<a class="article-anchor" href="#流程" aria-hidden="true"></a></h2><ul>
-<li>打开登录页面, 点击扫码登录</li>
-<li>APP扫码, 拿到一个URL, 截取最后部分的ticket</li>
-<li>调用接口, 传递ticket, 告知服务器登录状态</li>
-</ul>
+                <h1 id="移动应用接入指南" class="article-heading"><a href="#移动应用接入指南" class="headerlink" title="移动应用接入指南"></a>移动应用接入指南<a class="article-anchor" href="#移动应用接入指南" aria-hidden="true"></a></h1><p>优先建议使用<strong>用户中心SDK</strong>进行接入</p>
 
 
               </div>
