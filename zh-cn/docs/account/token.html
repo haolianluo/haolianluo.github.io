@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Mops Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://haolianluo.github.io/zh-cn/docs/account/token.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/account/token.html">
+    
+  
+  <!-- Icon -->
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
+  <meta name="theme-color" content="#ffffff">
+  <!-- CSS -->
+  <!-- build:css build/css/easywechat.css -->
+  <link rel="stylesheet" href="/css/easywechat.css">
+  <!-- endbuild -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Mops Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="两个不同的Token(令牌)OAuth2 中主要有两个不同的Token(令牌), 其中的区别为是否与用户相关联, 即与用户相关的用户Token,我们称为用户令牌 和与客户端相关的客户端Token,称为客户端令牌可以通过用户令牌, 查询到用户的相关信息, 客户端令牌与用户无关, 一般只用于客户端合法性验证 用户令牌 获取用户令牌一般有两个方式, 授权码模式和密码模式  授权码模式 授权码模式通过跳">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mops Docs">
+<meta property="og:url" content="http://haolianluo.github.io/zh-cn/docs/account/token.html">
+<meta property="og:site_name" content="Mops Docs">
+<meta property="og:description" content="两个不同的Token(令牌)OAuth2 中主要有两个不同的Token(令牌), 其中的区别为是否与用户相关联, 即与用户相关的用户Token,我们称为用户令牌 和与客户端相关的客户端Token,称为客户端令牌可以通过用户令牌, 查询到用户的相关信息, 客户端令牌与用户无关, 一般只用于客户端合法性验证 用户令牌 获取用户令牌一般有两个方式, 授权码模式和密码模式  授权码模式 授权码模式通过跳">
+<meta property="og:updated_time" content="2017-05-13T13:14:05.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mops Docs">
+<meta name="twitter:description" content="两个不同的Token(令牌)OAuth2 中主要有两个不同的Token(令牌), 其中的区别为是否与用户相关联, 即与用户相关的用户Token,我们称为用户令牌 和与客户端相关的客户端Token,称为客户端令牌可以通过用户令牌, 查询到用户的相关信息, 客户端令牌与用户无关, 一般只用于客户端合法性验证 用户令牌 获取用户令牌一般有两个方式, 授权码模式和密码模式  授权码模式 授权码模式通过跳">
+  <!-- Swiftype -->
+  <meta class="swiftype" name="title" data-type="string" content="Mops Docs">
+  <!-- Google Analytics -->
+  
+
+
+
+</head>
+<body class="">
+  <div id="container">
+    
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">MOPS智能</a>
+    </h1>
+    <nav id="main-nav">
+      <ul>
+        <li class="main-nav-item"><a href="/" class="main-nav-link">首页</a></li><li class="main-nav-item"><a href="/zh-cn/docs/account" class="main-nav-link">联络ID</a></li><li class="main-nav-item"><a href="/zh-cn/docs/push" class="main-nav-link">消息推送</a></li>
+        <li class="main-nav-item">
+          <a href="https://github.com/haolianluo/docs" class="main-nav-link">GitHub</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select">
+        
+          <option data-page-lang="zh-cn" value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    
+    <div id="search-btn-wrap" class="main-nav-item">
+      <input type="text" class="st-default-search-input">
+    </div>
+    
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name"></h1>
+                <a href="https://github.com/haolianluo/docs/edit/zh-cn/account/token.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+              </header>
+              <div>
+                <strong class="sidebar-title">目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#两个不同的Token-令牌"><span class="toc-text">两个不同的Token(令牌)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户令牌"><span class="toc-text">用户令牌</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#授权码模式"><span class="toc-text">授权码模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#密码模式"><span class="toc-text">密码模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#客户端Token"><span class="toc-text">客户端Token</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#影响"><span class="toc-text">影响</span></a></li></ol>
+              </div>
+              <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
+                <!-- --- title: 两个不同的Token(令牌) -->
+<h2 id="两个不同的Token-令牌" class="article-heading"><a href="#两个不同的Token-令牌" class="headerlink" title="两个不同的Token(令牌)"></a>两个不同的Token(令牌)<a class="article-anchor" href="#两个不同的Token-令牌" aria-hidden="true"></a></h2><p>OAuth2 中主要有两个不同的Token(令牌), 其中的区别为是否与用户相关联, 即与用户相关的用户Token,我们称为<strong>用户令牌</strong> 和与客户端相关的客户端Token,称为<strong>客户端令牌</strong><br>可以通过用户令牌, 查询到用户的相关信息, 客户端令牌与用户无关, 一般只用于客户端合法性验证</p>
+<h2 id="用户令牌" class="article-heading"><a href="#用户令牌" class="headerlink" title="用户令牌"></a>用户令牌<a class="article-anchor" href="#用户令牌" aria-hidden="true"></a></h2><blockquote>
+<p>获取用户令牌一般有两个方式, 授权码模式和密码模式</p>
+</blockquote>
+<h3 id="授权码模式" class="article-heading"><a href="#授权码模式" class="headerlink" title="授权码模式"></a>授权码模式<a class="article-anchor" href="#授权码模式" aria-hidden="true"></a></h3><blockquote>
+<p>授权码模式通过跳转到授权中心来获取令牌</p>
+</blockquote>
+<ul>
+<li>跳转到认证服务器</li>
+<li>认证服务器需要用户登录</li>
+<li>用户选择是否授权</li>
+<li>授权同意后, 自动跳转回原来的页面, 客户端拿到授权码</li>
+<li>客户端凭借授权码, 在服务器上通过接口向认证服务器申请令牌</li>
+</ul>
+<h3 id="密码模式" class="article-heading"><a href="#密码模式" class="headerlink" title="密码模式"></a>密码模式<a class="article-anchor" href="#密码模式" aria-hidden="true"></a></h3><blockquote>
+<p>密码模式通过接口直接申请到令牌</p>
+</blockquote>
+<p>该接口需要几个参数, client_id, client_secret, grant_type, username, password</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;client_id&quot;: &quot;客户端ID&quot;,</div><div class="line">    &quot;client_secret&quot;: &quot;客户端密码&quot;,</div><div class="line">    &quot;grant_type&quot;: &quot;授权模式, 此外为 password&quot;,</div><div class="line">    &quot;username&quot;: &quot;用户名&quot;,</div><div class="line">    &quot;password&quot;: &quot;用户密码&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="客户端Token" class="article-heading"><a href="#客户端Token" class="headerlink" title="客户端Token"></a>客户端Token<a class="article-anchor" href="#客户端Token" aria-hidden="true"></a></h2><blockquote>
+<p>通过客户端ID和客户端密码来获取令牌</p>
+</blockquote>
+<p>该Token与客户端相关, 与用于无关, 只用于客户端认证, 避免了接口泄露和滥用</p>
+<h2 id="影响" class="article-heading"><a href="#影响" class="headerlink" title="影响"></a>影响<a class="article-anchor" href="#影响" aria-hidden="true"></a></h2><p>两个Token(令牌)并不会相关影响, refresh_token 只能使用一次, 过后失效, 但是每次通过刷新操作获取的Token, 并不会随着刷新而失效,<br>刷新只是为了获取较新的Token</p>
+
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2017-05-13T13:14:05.997Z" itemprop="dateModified">上次更新：2017-05-13</time>
+                <a href="web-integration.html" class="article-footer-prev" title="概述"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="client-pattern.html" class="article-footer-next" title="客户端模式"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">开始使用</strong><a href="get-started.html" class="sidebar-link">概述</a><strong class="sidebar-title">移动应用接入</strong><a href="app-integration.html" class="sidebar-link">概述</a><strong class="sidebar-title">网页应用接入</strong><a href="web-integration.html" class="sidebar-link">概述</a><strong class="sidebar-title">令牌</strong><a href="token.html" class="sidebar-link current">令牌</a><a href="client-pattern.html" class="sidebar-link">客户端模式</a><a href="code-pattern.html" class="sidebar-link">授权码模式</a><a href="password-pattern.html" class="sidebar-link">密码模式</a><a href="refresh-token.html" class="sidebar-link">刷新令牌</a><strong class="sidebar-title">其他</strong><a href="design.html" class="sidebar-link">设计思想</a><a href="qa.html" class="sidebar-link">问题解答</a><a href="contributing.html" class="sidebar-link">贡献</a><a href="releases.html" class="sidebar-link">更新日志</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+  </div>
+  <footer id="footer">
+  <div class="wrapper">
+    <div class="inner">
+      <div class="friend-links">
+        
+        <a href="http://lianluo.com" target="_blank">联络互动</a>
+        
+      </div>
+      <div id="footer-copyright">
+        &copy; 2017 <a href="http://overtrue.me/" target="_blank">zacksleo</a><br>
+        Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+      </div>
+      <div id="footer-links">
+        <a href="http://weibo.com/5898199735" class="footer-link" target="_blank"><i class="fa fa-weibo"></i></a>
+        <a href="https://github.com/haolianluo/docs" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+        <a href="https://mall.lianluo.com" class="footer-link" target="_blank"><i class="fa fa-shopping-bag"></i></a>
+        <a href="http://www.lianluo.com" class="footer-link" target="_blank"><i class="fa fa-home"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">首页</a></li><li class="mobile-nav-item"><a href="/zh-cn/docs/account" class="mobile-nav-link">联络ID</a></li><li class="mobile-nav-item"><a href="/zh-cn/docs/push" class="mobile-nav-link">消息推送</a></li>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/haolianluo/docs" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="get-started.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">移动应用接入</strong><a href="app-integration.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">网页应用接入</strong><a href="web-integration.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">令牌</strong><a href="token.html" class="mobile-nav-link current">令牌</a><a href="client-pattern.html" class="mobile-nav-link">客户端模式</a><a href="code-pattern.html" class="mobile-nav-link">授权码模式</a><a href="password-pattern.html" class="mobile-nav-link">密码模式</a><a href="refresh-token.html" class="mobile-nav-link">刷新令牌</a><strong class="mobile-nav-title">其他</strong><a href="design.html" class="mobile-nav-link">设计思想</a><a href="qa.html" class="mobile-nav-link">问题解答</a><a href="contributing.html" class="mobile-nav-link">贡献</a><a href="releases.html" class="mobile-nav-link">更新日志</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="//cdn.jsdelivr.net/retinajs/1.1.0/retina.min.js" async></script>
+
+<script src="/js/tab.js"></script>
+<!-- Swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+</body>
+</html>

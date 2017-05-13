@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Mops Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://haolianluo.github.io/zh-cn/docs/account/design.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/account/design.html">
+    
+  
+  <!-- Icon -->
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
+  <meta name="theme-color" content="#ffffff">
+  <!-- CSS -->
+  <!-- build:css build/css/easywechat.css -->
+  <link rel="stylesheet" href="/css/easywechat.css">
+  <!-- endbuild -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Mops Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="[[TOC]] 设计思路 1.统一注册和认证, 用户信息放在一处托管 2.可使用 用户名/手机号/邮箱 其中任何一个作为认证username 3.会员通过union_id字段来实现ID的统一 4.接口授权遵循OAuth2.0规范 5.接口实现遵循RESTful规范  准备工作 在用户中心由创建应用ID并申请应用密钥  名词解释客户端模式客户端模式（Client Credentials Grant">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mops Docs">
+<meta property="og:url" content="http://haolianluo.github.io/zh-cn/docs/account/design.html">
+<meta property="og:site_name" content="Mops Docs">
+<meta property="og:description" content="[[TOC]] 设计思路 1.统一注册和认证, 用户信息放在一处托管 2.可使用 用户名/手机号/邮箱 其中任何一个作为认证username 3.会员通过union_id字段来实现ID的统一 4.接口授权遵循OAuth2.0规范 5.接口实现遵循RESTful规范  准备工作 在用户中心由创建应用ID并申请应用密钥  名词解释客户端模式客户端模式（Client Credentials Grant">
+<meta property="og:updated_time" content="2017-05-13T13:14:05.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mops Docs">
+<meta name="twitter:description" content="[[TOC]] 设计思路 1.统一注册和认证, 用户信息放在一处托管 2.可使用 用户名/手机号/邮箱 其中任何一个作为认证username 3.会员通过union_id字段来实现ID的统一 4.接口授权遵循OAuth2.0规范 5.接口实现遵循RESTful规范  准备工作 在用户中心由创建应用ID并申请应用密钥  名词解释客户端模式客户端模式（Client Credentials Grant">
+  <!-- Swiftype -->
+  <meta class="swiftype" name="title" data-type="string" content="Mops Docs">
+  <!-- Google Analytics -->
+  
+
+
+
+</head>
+<body class="">
+  <div id="container">
+    
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">MOPS智能</a>
+    </h1>
+    <nav id="main-nav">
+      <ul>
+        <li class="main-nav-item"><a href="/" class="main-nav-link">首页</a></li><li class="main-nav-item"><a href="/zh-cn/docs/account" class="main-nav-link">联络ID</a></li><li class="main-nav-item"><a href="/zh-cn/docs/push" class="main-nav-link">消息推送</a></li>
+        <li class="main-nav-item">
+          <a href="https://github.com/haolianluo/docs" class="main-nav-link">GitHub</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select">
+        
+          <option data-page-lang="zh-cn" value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    
+    <div id="search-btn-wrap" class="main-nav-item">
+      <input type="text" class="st-default-search-input">
+    </div>
+    
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name"></h1>
+                <a href="https://github.com/haolianluo/docs/edit/zh-cn/account/design.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+              </header>
+              <div>
+                <strong class="sidebar-title">目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#设计思路"><span class="toc-text">设计思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#名词解释"><span class="toc-text">名词解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端模式"><span class="toc-text">客户端模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问令牌"><span class="toc-text">访问令牌</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#union-id"><span class="toc-text">union_id</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#username"><span class="toc-text">username</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+              </div>
+              <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
+                <!-- --- title: 设计思路 -->
+<p>[[<em>TOC</em>]]</p>
+<h2 id="设计思路" class="article-heading"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路<a class="article-anchor" href="#设计思路" aria-hidden="true"></a></h2><ul>
+<li>1.统一注册和认证, 用户信息放在一处托管</li>
+<li>2.可使用 用户名/手机号/邮箱 其中任何一个作为认证<strong>username</strong></li>
+<li>3.会员通过union_id字段来实现ID的统一</li>
+<li>4.接口授权遵循OAuth2.0规范</li>
+<li>5.接口实现遵循RESTful规范</li>
+</ul>
+<h2 id="准备工作" class="article-heading"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作<a class="article-anchor" href="#准备工作" aria-hidden="true"></a></h2><ol>
+<li>在用户中心由创建应用ID并申请应用密钥</li>
+</ol>
+<h2 id="名词解释" class="article-heading"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释<a class="article-anchor" href="#名词解释" aria-hidden="true"></a></h2><h3 id="客户端模式" class="article-heading"><a href="#客户端模式" class="headerlink" title="客户端模式"></a>客户端模式<a class="article-anchor" href="#客户端模式" aria-hidden="true"></a></h3><p>客户端模式（Client Credentials Grant）指客户端以自己的名义，而不是以用户的名义，向”服务提供商”进行认证。严格地说，客户端模式并不属于OAuth框架所要解决的问题。在这种模式中，用户直接向客户端注册，客户端以自己的名义要求”服务提供商”提供服务，其实不存在授权问题。</p>
+<h3 id="访问令牌" class="article-heading"><a href="#访问令牌" class="headerlink" title="访问令牌"></a>访问令牌<a class="article-anchor" href="#访问令牌" aria-hidden="true"></a></h3><p>用于授权的口令, 与用户的密码不同。用户可以在登录的时候，指定授权层令牌的权限范围和有效期。</p>
+<h3 id="union-id" class="article-heading"><a href="#union-id" class="headerlink" title="union_id"></a>union_id<a class="article-anchor" href="#union-id" aria-hidden="true"></a></h3><p>一段32位的字符串, 用于识别用户, 与平台无关,  唯一且保证通用<br>可根据union_id获取用户的基本信息，包括昵称、头像、性别、手机、邮箱等信息</p>
+<h3 id="username" class="article-heading"><a href="#username" class="headerlink" title="username"></a>username<a class="article-anchor" href="#username" aria-hidden="true"></a></h3><p>用户名/手机号/邮箱 其中的任何一个, 其中用户名至少6位, 且必须有一个字母; 手机号为11位数字;</p>
+<h2 id="参考资料" class="article-heading"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料<a class="article-anchor" href="#参考资料" aria-hidden="true"></a></h2><ul>
+<li><p><a href="http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html" target="_blank" rel="external">理解OAuth 2.0</a></p>
+</li>
+<li><p><a href="http://www.ruanyifeng.com/blog/2011/09/restful.html" target="_blank" rel="external">理解RESTful架构</a></p>
+</li>
+<li><p><a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html" target="_blank" rel="external">RESTful API 设计指南</a></p>
+</li>
+<li><p><a href="http://139.198.9.76:4567/guideline/RESTful%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83" target="_blank" rel="external">RESTful 接口规范</a></p>
+</li>
+</ul>
+
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2017-05-13T13:14:05.997Z" itemprop="dateModified">上次更新：2017-05-13</time>
+                <a href="refresh-token.html" class="article-footer-prev" title="刷新令牌"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="qa.html" class="article-footer-next" title="问题解答"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">开始使用</strong><a href="get-started.html" class="sidebar-link">概述</a><strong class="sidebar-title">移动应用接入</strong><a href="app-integration.html" class="sidebar-link">概述</a><strong class="sidebar-title">网页应用接入</strong><a href="web-integration.html" class="sidebar-link">概述</a><strong class="sidebar-title">令牌</strong><a href="token.html" class="sidebar-link">令牌</a><a href="client-pattern.html" class="sidebar-link">客户端模式</a><a href="code-pattern.html" class="sidebar-link">授权码模式</a><a href="password-pattern.html" class="sidebar-link">密码模式</a><a href="refresh-token.html" class="sidebar-link">刷新令牌</a><strong class="sidebar-title">其他</strong><a href="design.html" class="sidebar-link current">设计思想</a><a href="qa.html" class="sidebar-link">问题解答</a><a href="contributing.html" class="sidebar-link">贡献</a><a href="releases.html" class="sidebar-link">更新日志</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+  </div>
+  <footer id="footer">
+  <div class="wrapper">
+    <div class="inner">
+      <div class="friend-links">
+        
+        <a href="http://lianluo.com" target="_blank">联络互动</a>
+        
+      </div>
+      <div id="footer-copyright">
+        &copy; 2017 <a href="http://overtrue.me/" target="_blank">zacksleo</a><br>
+        Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+      </div>
+      <div id="footer-links">
+        <a href="http://weibo.com/5898199735" class="footer-link" target="_blank"><i class="fa fa-weibo"></i></a>
+        <a href="https://github.com/haolianluo/docs" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+        <a href="https://mall.lianluo.com" class="footer-link" target="_blank"><i class="fa fa-shopping-bag"></i></a>
+        <a href="http://www.lianluo.com" class="footer-link" target="_blank"><i class="fa fa-home"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">首页</a></li><li class="mobile-nav-item"><a href="/zh-cn/docs/account" class="mobile-nav-link">联络ID</a></li><li class="mobile-nav-item"><a href="/zh-cn/docs/push" class="mobile-nav-link">消息推送</a></li>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/haolianluo/docs" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="get-started.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">移动应用接入</strong><a href="app-integration.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">网页应用接入</strong><a href="web-integration.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">令牌</strong><a href="token.html" class="mobile-nav-link">令牌</a><a href="client-pattern.html" class="mobile-nav-link">客户端模式</a><a href="code-pattern.html" class="mobile-nav-link">授权码模式</a><a href="password-pattern.html" class="mobile-nav-link">密码模式</a><a href="refresh-token.html" class="mobile-nav-link">刷新令牌</a><strong class="mobile-nav-title">其他</strong><a href="design.html" class="mobile-nav-link current">设计思想</a><a href="qa.html" class="mobile-nav-link">问题解答</a><a href="contributing.html" class="mobile-nav-link">贡献</a><a href="releases.html" class="mobile-nav-link">更新日志</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+<script src="//cdn.jsdelivr.net/retinajs/1.1.0/retina.min.js" async></script>
+
+<script src="/js/tab.js"></script>
+<!-- Swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+</body>
+</html>

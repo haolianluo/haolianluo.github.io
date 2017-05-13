@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Mops Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://haolianluo.github.io//zh-cn/docs/account/api-795cf582f2.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/account/api.html">
+    
+  
+  <!-- Icon -->
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
+  <meta name="theme-color" content="#ffffff">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/build/css/easywechat-fb1530d20b.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Mops Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="FORMAT: 1AHOST: https://mops-api.lianluo.com/account/v1/ [[TOC]] 用户 [/users]获取用户信息 [GET] Header  Authorization Bearer {userToken} - 用户访问令牌, 通过授权码模式或密码模式获得 Content-Type application/json   Attributes ex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mops Docs">
+<meta property="og:url" content="http://haolianluo.github.io//zh-cn/docs/account/api-795cf582f2.html">
+<meta property="og:site_name" content="Mops Docs">
+<meta property="og:description" content="FORMAT: 1AHOST: https://mops-api.lianluo.com/account/v1/ [[TOC]] 用户 [/users]获取用户信息 [GET] Header  Authorization Bearer {userToken} - 用户访问令牌, 通过授权码模式或密码模式获得 Content-Type application/json   Attributes ex">
+<meta property="og:updated_time" content="2017-05-13T13:14:05.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mops Docs">
+<meta name="twitter:description" content="FORMAT: 1AHOST: https://mops-api.lianluo.com/account/v1/ [[TOC]] 用户 [/users]获取用户信息 [GET] Header  Authorization Bearer {userToken} - 用户访问令牌, 通过授权码模式或密码模式获得 Content-Type application/json   Attributes ex">
+  <!-- Swiftype -->
+  <meta class="swiftype" name="title" data-type="string" content="Mops Docs">
+  <!-- Google Analytics -->
+  
+
+
+
+</head>
+<body class="">
+  <div id="container">
+    
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">MOPS智能</a>
+    </h1>
+    <nav id="main-nav">
+      <ul>
+        <li class="main-nav-item"><a href="/" class="main-nav-link">首页</a></li><li class="main-nav-item"><a href="/zh-cn/docs/account" class="main-nav-link">联络ID</a></li><li class="main-nav-item"><a href="/zh-cn/docs/push" class="main-nav-link">消息推送</a></li>
+        <li class="main-nav-item">
+          <a href="https://github.com/haolianluo/docs" class="main-nav-link">GitHub</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select">
+        
+          <option data-page-lang="zh-cn" value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    
+    <div id="search-btn-wrap" class="main-nav-item">
+      <input type="text" class="st-default-search-input">
+    </div>
+    
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name"></h1>
+                <a href="https://github.com/haolianluo/docs/edit/zh-cn/account/api.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+              </header>
+              <div>
+                <strong class="sidebar-title">目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#用户-users"><span class="toc-text">用户 [/users]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取用户信息-GET"><span class="toc-text">获取用户信息 [GET]</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Token-tokens"><span class="toc-text">Token [/tokens]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取Tokens-POST"><span class="toc-text">获取Tokens [POST]</span></a></li></ol></li></ol>
+              </div>
+              <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
+                <p>FORMAT: 1A<br>HOST: <a href="https://mops-api.lianluo.com/account/v1/" target="_blank" rel="external">https://mops-api.lianluo.com/account/v1/</a></p>
+<p>[[<em>TOC</em>]]</p>
+<h2 id="用户-users" class="article-heading"><a href="#用户-users" class="headerlink" title="用户 [/users]"></a>用户 [/users]<a class="article-anchor" href="#用户-users" aria-hidden="true"></a></h2><h3 id="获取用户信息-GET" class="article-heading"><a href="#获取用户信息-GET" class="headerlink" title="获取用户信息 [GET]"></a>获取用户信息 [GET]<a class="article-anchor" href="#获取用户信息-GET" aria-hidden="true"></a></h3><ul>
+<li>Header <ul>
+<li>Authorization Bearer {userToken} - 用户访问令牌, 通过授权码模式或密码模式获得</li>
+<li>Content-Type application/json</li>
+</ul>
+</li>
+<li>Attributes<ul>
+<li>expand (string, optional) - 查询字段,可选, 如果添加了expand=profile, 则会给出profile的信息</li>
+</ul>
+</li>
+<li><p>Request (application/json)</p>
+<pre><code>{
+  &quot;expand&quot;:&quot;profile&quot;
+}
+</code></pre></li>
+<li><p>Response 200 (application/json) </p>
+<pre><code>{
+    &quot;union_id&quot;: &quot;AQAe4DrBlhnISCKKfNB791OPI8lBf-c-&quot;,
+  &quot;avatar&quot;: null,
+  &quot;username&quot;: &quot;zacksleo&quot;,
+  &quot;email&quot;: &quot;zacksleo@gmail.com&quot;,
+  &quot;phone&quot;: &quot;17002108009&quot;,
+  &quot;profile&quot;:{
+    &quot;nickname&quot;: &quot;昵称&quot;,
+    &quot;birthday&quot;: &quot;出生日期&quot;,
+    &quot;sex&quot;: &quot;性别, 1男,2女&quot;,
+    &quot;height&quot;: &quot;身高,cm&quot;,
+    &quot;weight&quot;: &quot;体重,kg&quot;          
+  }
+}
+</code></pre></li>
+</ul>
+<h2 id="Token-tokens" class="article-heading"><a href="#Token-tokens" class="headerlink" title="Token [/tokens]"></a>Token [/tokens]<a class="article-anchor" href="#Token-tokens" aria-hidden="true"></a></h2><h3 id="获取Tokens-POST" class="article-heading"><a href="#获取Tokens-POST" class="headerlink" title="获取Tokens [POST]"></a>获取Tokens [POST]<a class="article-anchor" href="#获取Tokens-POST" aria-hidden="true"></a></h3><ul>
+<li><p>Attributes</p>
+<ul>
+<li>client_id  (string, required) 应用ID</li>
+<li>client_secret (string, required) 应用密钥</li>
+<li>grant_type (string, required) 授权类型, 这里为client_credentials</li>
+</ul>
+</li>
+<li><p>Request (application/json)  </p>
+<pre><code>{
+    &quot;client_id&quot;:  &quot;fa21b49c-aa4b-36c3-852f-51b81cd6bc25-c-&quot;,
+    &quot;client_secret&quot;: &quot;a1BvrftDdS483cLwx3stJrfA-6Cm7lCo&quot;,
+    &quot;grant_type&quot;: &quot;client_credentials&quot;
+}
+</code></pre></li>
+<li><p>Response 201 (application/json)    </p>
+<pre><code>{
+  &quot;access_token&quot;: &quot;461526b1dad2cff2e48599ae5c848a5740fda71f&quot;,
+  &quot;expires_in&quot;: 86400,
+  &quot;token_type&quot;: &quot;Bearer&quot;,
+  &quot;scope&quot;: null
+}
+</code></pre></li>
+</ul>
+
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2017-05-13T13:14:05.997Z" itemprop="dateModified">上次更新：2017-05-13</time>
+                <a href="get-started.html" class="article-footer-next" title="概述"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">开始使用</strong><a href="get-started.html" class="sidebar-link">概述</a><strong class="sidebar-title">移动应用接入</strong><a href="app-integration.html" class="sidebar-link">概述</a><strong class="sidebar-title">网页应用接入</strong><a href="web-integration.html" class="sidebar-link">概述</a><strong class="sidebar-title">令牌</strong><a href="token.html" class="sidebar-link">令牌</a><a href="client-pattern.html" class="sidebar-link">客户端模式</a><a href="code-pattern.html" class="sidebar-link">授权码模式</a><a href="password-pattern.html" class="sidebar-link">密码模式</a><a href="refresh-token.html" class="sidebar-link">刷新令牌</a><strong class="sidebar-title">其他</strong><a href="design.html" class="sidebar-link">设计思想</a><a href="qa.html" class="sidebar-link">问题解答</a><a href="contributing.html" class="sidebar-link">贡献</a><a href="releases.html" class="sidebar-link">更新日志</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+  </div>
+  <footer id="footer">
+  <div class="wrapper">
+    <div class="inner">
+      <div class="friend-links">
+        
+        <a href="http://lianluo.com" target="_blank">联络互动</a>
+        
+      </div>
+      <div id="footer-copyright">
+        &copy; 2017 <a href="http://overtrue.me/" target="_blank">zacksleo</a><br>
+        Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+      </div>
+      <div id="footer-links">
+        <a href="http://weibo.com/5898199735" class="footer-link" target="_blank"><i class="fa fa-weibo"></i></a>
+        <a href="https://github.com/haolianluo/docs" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+        <a href="https://mall.lianluo.com" class="footer-link" target="_blank"><i class="fa fa-shopping-bag"></i></a>
+        <a href="http://www.lianluo.com" class="footer-link" target="_blank"><i class="fa fa-home"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">首页</a></li><li class="mobile-nav-item"><a href="/zh-cn/docs/account" class="mobile-nav-link">联络ID</a></li><li class="mobile-nav-item"><a href="/zh-cn/docs/push" class="mobile-nav-link">消息推送</a></li>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/haolianluo/docs" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="get-started.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">移动应用接入</strong><a href="app-integration.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">网页应用接入</strong><a href="web-integration.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">令牌</strong><a href="token.html" class="mobile-nav-link">令牌</a><a href="client-pattern.html" class="mobile-nav-link">客户端模式</a><a href="code-pattern.html" class="mobile-nav-link">授权码模式</a><a href="password-pattern.html" class="mobile-nav-link">密码模式</a><a href="refresh-token.html" class="mobile-nav-link">刷新令牌</a><strong class="mobile-nav-title">其他</strong><a href="design.html" class="mobile-nav-link">设计思想</a><a href="qa.html" class="mobile-nav-link">问题解答</a><a href="contributing.html" class="mobile-nav-link">贡献</a><a href="releases.html" class="mobile-nav-link">更新日志</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<script src="/build/js/main-f3ea4c4cec.js"></script>
+<script src="//cdn.jsdelivr.net/retinajs/1.1.0/retina.min.js" async></script>
+
+<script src="/js/tab.js"></script>
+<!-- Swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+</body>
+</html>
