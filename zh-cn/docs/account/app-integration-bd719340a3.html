@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://haolianluo.github.io/zh-cn/docs/account/refresh-token.html">
+  <link rel="canonical" href="http://haolianluo.github.io//zh-cn/docs/account/app-integration-bd719340a3.html">
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/account/refresh-token.html">
+      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/account/app-integration.html">
     
   
   <!-- Icon -->
@@ -18,23 +18,21 @@
   <link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
   <meta name="theme-color" content="#ffffff">
   <!-- CSS -->
-  <!-- build:css build/css/easywechat.css -->
-  <link rel="stylesheet" href="/css/easywechat.css">
-  <!-- endbuild -->
+  <link rel="stylesheet" href="/build/css/easywechat-fb1530d20b.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Mops Docs">
   <!-- Open Graph -->
-  <meta name="description" content="刷新令牌为保证使用较新和token, 可以使用refresh_token来刷新获取新的令牌  POST  /tokens  Attributes  client_id  (string, required) 应用ID client_secret (string, required) 应用密钥 grant_type (string, required) 授权类型, 这里为refresh_token">
+  <meta name="description" content="移动应用接入指南优先建议使用用户中心SDK进行接入">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mops Docs">
-<meta property="og:url" content="http://haolianluo.github.io/zh-cn/docs/account/refresh-token.html">
+<meta property="og:url" content="http://haolianluo.github.io//zh-cn/docs/account/app-integration-bd719340a3.html">
 <meta property="og:site_name" content="Mops Docs">
-<meta property="og:description" content="刷新令牌为保证使用较新和token, 可以使用refresh_token来刷新获取新的令牌  POST  /tokens  Attributes  client_id  (string, required) 应用ID client_secret (string, required) 应用密钥 grant_type (string, required) 授权类型, 这里为refresh_token">
+<meta property="og:description" content="移动应用接入指南优先建议使用用户中心SDK进行接入">
 <meta property="og:updated_time" content="2017-05-20T02:01:33.411Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mops Docs">
-<meta name="twitter:description" content="刷新令牌为保证使用较新和token, 可以使用refresh_token来刷新获取新的令牌  POST  /tokens  Attributes  client_id  (string, required) 应用ID client_secret (string, required) 应用密钥 grant_type (string, required) 授权类型, 这里为refresh_token">
+<meta name="twitter:description" content="移动应用接入指南优先建议使用用户中心SDK进行接入">
   <!-- Swiftype -->
   <meta class="swiftype" name="title" data-type="string" content="Mops Docs">
   <!-- Google Analytics -->
@@ -88,49 +86,20 @@
             <div class="inner">
               <header class="article-header">
                 <h1 class="article-title" itemprop="name"></h1>
-                <a href="https://github.com/haolianluo/docs/edit/zh-cn/account/refresh-token.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+                <a href="https://github.com/haolianluo/docs/edit/zh-cn/account/app-integration.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
               </header>
               <div>
                 <strong class="sidebar-title">目录</strong>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#刷新令牌"><span class="toc-text">刷新令牌</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#移动应用接入指南"><span class="toc-text">移动应用接入指南</span></a></li></ol>
               </div>
               <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
-                <h2 id="刷新令牌" class="article-heading"><a href="#刷新令牌" class="headerlink" title="刷新令牌"></a>刷新令牌<a class="article-anchor" href="#刷新令牌" aria-hidden="true"></a></h2><p>为保证使用较新和token, 可以使用refresh_token来刷新获取新的令牌</p>
-<ul>
-<li><p><code>POST  /tokens</code></p>
-</li>
-<li><p>Attributes</p>
-<ul>
-<li>client_id  (string, required) 应用ID</li>
-<li>client_secret (string, required) 应用密钥</li>
-<li>grant_type (string, required) 授权类型, 这里为refresh_token</li>
-<li>refresh_token (string, required) 刷新令牌的令牌</li>
-</ul>
-</li>
-<li><p>Request (application/json)  </p>
-<pre><code>{
-    &quot;client_id&quot;:  &quot;fa21b49c-aa3b-37c3-852f-51b41cd6bc25-c-&quot;,
-    &quot;client_secret&quot;: &quot;a1BvrfQoOVKO7cLwtskRJrfA-6Cm7lCo&quot;,
-    &quot;grant_type&quot;: &quot;client_credentials&quot;,
-    &quot;refresh_token&quot;: &quot;ec473b1ce714aa52595f3f405a2fa0c09c115241&quot;
-}
-</code></pre></li>
-<li><p>Response 201 (application/json)    </p>
-<pre><code>{
-  &quot;access_token&quot;: &quot;461526b1dad2cff2e48599ae5c848a5740fda71f&quot;,
-  &quot;expires_in&quot;: 86400,
-  &quot;token_type&quot;: &quot;Bearer&quot;,
-  &quot;scope&quot;: null,
-  &quot;refresh_token&quot;: &quot;ec473b1ce714aa52595f3f405a2fa0c09c115241&quot;
-}
-</code></pre></li>
-</ul>
+                <h1 id="移动应用接入指南" class="article-heading"><a href="#移动应用接入指南" class="headerlink" title="移动应用接入指南"></a>移动应用接入指南<a class="article-anchor" href="#移动应用接入指南" aria-hidden="true"></a></h1><p>优先建议使用<strong>用户中心SDK</strong>进行接入</p>
 
 
               </div>
               <footer class="article-footer">
                 <time class="article-footer-updated" datetime="2017-05-20T02:01:33.411Z" itemprop="dateModified">上次更新：2017-05-20</time>
-                <a href="password-pattern.html" class="article-footer-prev" title="密码模式"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="design.html" class="article-footer-next" title="设计思想"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+                <a href="get-started.html" class="article-footer-prev" title="概述"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="web-integration.html" class="article-footer-next" title="概述"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
             </div>
@@ -140,7 +109,7 @@
         </div>
       </article>
       <aside id="sidebar" role="navigation">
-  <div class="inner"><strong class="sidebar-title">开始使用</strong><a href="get-started.html" class="sidebar-link">概述</a><strong class="sidebar-title">移动应用接入</strong><a href="app-integration.html" class="sidebar-link">概述</a><strong class="sidebar-title">网页应用接入</strong><a href="web-integration.html" class="sidebar-link">概述</a><strong class="sidebar-title">令牌</strong><a href="token.html" class="sidebar-link">令牌</a><a href="client-pattern.html" class="sidebar-link">客户端模式</a><a href="code-pattern.html" class="sidebar-link">授权码模式</a><a href="password-pattern.html" class="sidebar-link">密码模式</a><a href="refresh-token.html" class="sidebar-link current">刷新令牌</a><strong class="sidebar-title">其他</strong><a href="design.html" class="sidebar-link">设计思想</a><a href="qa.html" class="sidebar-link">问题解答</a><a href="contributing.html" class="sidebar-link">贡献</a><a href="releases.html" class="sidebar-link">更新日志</a></div>
+  <div class="inner"><strong class="sidebar-title">开始使用</strong><a href="get-started.html" class="sidebar-link">概述</a><strong class="sidebar-title">移动应用接入</strong><a href="app-integration.html" class="sidebar-link current">概述</a><strong class="sidebar-title">网页应用接入</strong><a href="web-integration.html" class="sidebar-link">概述</a><strong class="sidebar-title">令牌</strong><a href="token.html" class="sidebar-link">令牌</a><a href="client-pattern.html" class="sidebar-link">客户端模式</a><a href="code-pattern.html" class="sidebar-link">授权码模式</a><a href="password-pattern.html" class="sidebar-link">密码模式</a><a href="refresh-token.html" class="sidebar-link">刷新令牌</a><strong class="sidebar-title">其他</strong><a href="design.html" class="sidebar-link">设计思想</a><a href="qa.html" class="sidebar-link">问题解答</a><a href="contributing.html" class="sidebar-link">贡献</a><a href="releases.html" class="sidebar-link">更新日志</a></div>
 </aside>
     </div>
   </div>
@@ -177,7 +146,7 @@
       </li>
     </ul>
     
-      <strong class="mobile-nav-title">开始使用</strong><a href="get-started.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">移动应用接入</strong><a href="app-integration.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">网页应用接入</strong><a href="web-integration.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">令牌</strong><a href="token.html" class="mobile-nav-link">令牌</a><a href="client-pattern.html" class="mobile-nav-link">客户端模式</a><a href="code-pattern.html" class="mobile-nav-link">授权码模式</a><a href="password-pattern.html" class="mobile-nav-link">密码模式</a><a href="refresh-token.html" class="mobile-nav-link current">刷新令牌</a><strong class="mobile-nav-title">其他</strong><a href="design.html" class="mobile-nav-link">设计思想</a><a href="qa.html" class="mobile-nav-link">问题解答</a><a href="contributing.html" class="mobile-nav-link">贡献</a><a href="releases.html" class="mobile-nav-link">更新日志</a>
+      <strong class="mobile-nav-title">开始使用</strong><a href="get-started.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">移动应用接入</strong><a href="app-integration.html" class="mobile-nav-link current">概述</a><strong class="mobile-nav-title">网页应用接入</strong><a href="web-integration.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">令牌</strong><a href="token.html" class="mobile-nav-link">令牌</a><a href="client-pattern.html" class="mobile-nav-link">客户端模式</a><a href="code-pattern.html" class="mobile-nav-link">授权码模式</a><a href="password-pattern.html" class="mobile-nav-link">密码模式</a><a href="refresh-token.html" class="mobile-nav-link">刷新令牌</a><strong class="mobile-nav-title">其他</strong><a href="design.html" class="mobile-nav-link">设计思想</a><a href="qa.html" class="mobile-nav-link">问题解答</a><a href="contributing.html" class="mobile-nav-link">贡献</a><a href="releases.html" class="mobile-nav-link">更新日志</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
@@ -190,11 +159,7 @@
   </div>
 </nav>
   <!-- Scripts -->
-<!-- build:js build/js/main.js -->
-<script src="/js/lang_select.js"></script>
-<script src="/js/toc.js"></script>
-<script src="/js/mobile_nav.js"></script>
-<!-- endbuild -->
+<script src="/build/js/main-f3ea4c4cec.js"></script>
 <script src="//cdn.jsdelivr.net/retinajs/1.1.0/retina.min.js" async></script>
 
 <script src="/js/tab.js"></script>
