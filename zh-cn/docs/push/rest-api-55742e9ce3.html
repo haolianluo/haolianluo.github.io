@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://haolianluo.github.io/zh-cn/docs/account/index.html">
+  <link rel="canonical" href="http://haolianluo.github.io//zh-cn/docs/push/rest-api-55742e9ce3.html">
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/account/index.html">
+      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/push/rest-api.html">
     
   
   <!-- Icon -->
@@ -18,26 +18,21 @@
   <link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
   <meta name="theme-color" content="#ffffff">
   <!-- CSS -->
-  <!-- build:css build/css/easywechat.css -->
-  <link rel="stylesheet" href="/css/easywechat.css">
-  <!-- endbuild -->
+  <link rel="stylesheet" href="/build/css/easywechat-fb1530d20b.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Mops Docs">
   <!-- Open Graph -->
-  <meta name="description" content="简介 为其他方应用或网站提供统一注册和认证的开放平台， 遵循REST和OAuth2.0规范  文档开始使用 快速开始  网站应用接入 网站应用接入指南  接口文档 API文档  其他 设计思想 两种Token的说明 常见问题  环境 用户中心正式环境  https://mops-ucenter.lianluo.com  技术支持: QQ群 641981380    微信群    联系邮箱:">
+  <meta name="description" content="FORMAT: 1AHOST: https://mops-api.lianluo.com/push/server/v1 消息推送普通消息 [/messages]推送 [POST] Attributes  title (string) - “消息标题”, description (string, required) - “消息内容”, group_by (number, required) - 推送">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mops Docs">
-<meta property="og:url" content="http://haolianluo.github.io/zh-cn/docs/account/index.html">
+<meta property="og:url" content="http://haolianluo.github.io//zh-cn/docs/push/rest-api-55742e9ce3.html">
 <meta property="og:site_name" content="Mops Docs">
-<meta property="og:description" content="简介 为其他方应用或网站提供统一注册和认证的开放平台， 遵循REST和OAuth2.0规范  文档开始使用 快速开始  网站应用接入 网站应用接入指南  接口文档 API文档  其他 设计思想 两种Token的说明 常见问题  环境 用户中心正式环境  https://mops-ucenter.lianluo.com  技术支持: QQ群 641981380    微信群    联系邮箱:">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/675eb504gy1ffngjw0c1uj206d086t95.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/675eb504ly1ffwja9ubczj206d08vq3g.jpg">
+<meta property="og:description" content="FORMAT: 1AHOST: https://mops-api.lianluo.com/push/server/v1 消息推送普通消息 [/messages]推送 [POST] Attributes  title (string) - “消息标题”, description (string, required) - “消息内容”, group_by (number, required) - 推送">
 <meta property="og:updated_time" content="2017-05-24T08:44:13.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mops Docs">
-<meta name="twitter:description" content="简介 为其他方应用或网站提供统一注册和认证的开放平台， 遵循REST和OAuth2.0规范  文档开始使用 快速开始  网站应用接入 网站应用接入指南  接口文档 API文档  其他 设计思想 两种Token的说明 常见问题  环境 用户中心正式环境  https://mops-ucenter.lianluo.com  技术支持: QQ群 641981380    微信群    联系邮箱:">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/675eb504gy1ffngjw0c1uj206d086t95.jpg">
+<meta name="twitter:description" content="FORMAT: 1AHOST: https://mops-api.lianluo.com/push/server/v1 消息推送普通消息 [/messages]推送 [POST] Attributes  title (string) - “消息标题”, description (string, required) - “消息内容”, group_by (number, required) - 推送">
   <!-- Swiftype -->
   <meta class="swiftype" name="title" data-type="string" content="Mops Docs">
   <!-- Google Analytics -->
@@ -91,44 +86,90 @@
             <div class="inner">
               <header class="article-header">
                 <h1 class="article-title" itemprop="name"></h1>
-                <a href="https://github.com/haolianluo/docs/edit/zh-cn/account/index.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+                <a href="https://github.com/haolianluo/docs/edit/zh-cn/push/rest-api.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
               </header>
               <div>
                 <strong class="sidebar-title">目录</strong>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文档"><span class="toc-text">文档</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#开始使用"><span class="toc-text">开始使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网站应用接入"><span class="toc-text">网站应用接入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口文档"><span class="toc-text">接口文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境"><span class="toc-text">环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技术支持"><span class="toc-text">技术支持:</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#消息推送"><span class="toc-text">消息推送</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#普通消息-messages"><span class="toc-text">普通消息 [/messages]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#推送-POST"><span class="toc-text">推送 [POST]</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#透传消息-bg-messages"><span class="toc-text">透传消息 [/bg-messages]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#推送-POST-1"><span class="toc-text">推送 [POST]</span></a></li></ol></li></ol></li></ol>
               </div>
               <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
-                <!-- --- title: 用户中心 -->
-<h2 id="简介" class="article-heading"><a href="#简介" class="headerlink" title="简介"></a>简介<a class="article-anchor" href="#简介" aria-hidden="true"></a></h2><blockquote>
-<p>为其他方应用或网站提供统一注册和认证的开放平台， 遵循REST和OAuth2.0规范</p>
-</blockquote>
-<h2 id="文档" class="article-heading"><a href="#文档" class="headerlink" title="文档"></a>文档<a class="article-anchor" href="#文档" aria-hidden="true"></a></h2><h3 id="开始使用" class="article-heading"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用<a class="article-anchor" href="#开始使用" aria-hidden="true"></a></h3><ul>
-<li><a href="get-started">快速开始</a></li>
+                <p>FORMAT: 1A<br>HOST: <a href="https://mops-api.lianluo.com/push/server/v1" target="_blank" rel="external">https://mops-api.lianluo.com/push/server/v1</a></p>
+<h1 id="消息推送" class="article-heading"><a href="#消息推送" class="headerlink" title="消息推送"></a>消息推送<a class="article-anchor" href="#消息推送" aria-hidden="true"></a></h1><h2 id="普通消息-messages" class="article-heading"><a href="#普通消息-messages" class="headerlink" title="普通消息 [/messages]"></a>普通消息 [/messages]<a class="article-anchor" href="#普通消息-messages" aria-hidden="true"></a></h2><h3 id="推送-POST" class="article-heading"><a href="#推送-POST" class="headerlink" title="推送 [POST]"></a>推送 [POST]<a class="article-anchor" href="#推送-POST" aria-hidden="true"></a></h3><ul>
+<li><p>Attributes</p>
+<ul>
+<li>title (string) - “消息标题”,</li>
+<li>description (string, required) - “消息内容”,</li>
+<li>group_by (number, required) - 推送方式 0: 所有设备 1: 指定设备 2: 按设备标签推送  3:按主题推送</li>
+<li>url (string) - URL</li>
+<li>custom_content (object) - 自定义字段</li>
+<li>topic (array, required) - 主题数组, 对应group_by. 1: 设备client_id集合 2. 标签集合, 3. 主题集合</li>
+<li>apns (boolean, optional) - 是否使用APNs, 如果使用则同时推送到APNs</li>
 </ul>
-<h3 id="网站应用接入" class="article-heading"><a href="#网站应用接入" class="headerlink" title="网站应用接入"></a>网站应用接入<a class="article-anchor" href="#网站应用接入" aria-hidden="true"></a></h3><ul>
-<li><a href="web-integration">网站应用接入指南</a></li>
-</ul>
-<h3 id="接口文档" class="article-heading"><a href="#接口文档" class="headerlink" title="接口文档"></a>接口文档<a class="article-anchor" href="#接口文档" aria-hidden="true"></a></h3><ul>
-<li><a href="api">API文档</a></li>
-</ul>
-<h3 id="其他" class="article-heading"><a href="#其他" class="headerlink" title="其他"></a>其他<a class="article-anchor" href="#其他" aria-hidden="true"></a></h3><ul>
-<li><a href="design">设计思想</a></li>
-<li><a href="token">两种Token的说明</a></li>
-<li><a href="qa">常见问题</a></li>
-</ul>
-<h2 id="环境" class="article-heading"><a href="#环境" class="headerlink" title="环境"></a>环境<a class="article-anchor" href="#环境" aria-hidden="true"></a></h2><ul>
-<li>用户中心正式环境  <a href="https://mops-ucenter.lianluo.com" target="_blank" rel="external">https://mops-ucenter.lianluo.com</a></li>
-</ul>
-<h2 id="技术支持" class="article-heading"><a href="#技术支持" class="headerlink" title="技术支持:"></a>技术支持:<a class="article-anchor" href="#技术支持" aria-hidden="true"></a></h2><ul>
-<li><p>QQ群 641981380 </p>
-<p><img src="http://ww1.sinaimg.cn/large/675eb504gy1ffngjw0c1uj206d086t95.jpg" alt=""></p>
 </li>
-<li><p>微信群 </p>
-<p><img src="http://ww1.sinaimg.cn/large/675eb504ly1ffwja9ubczj206d08vq3g.jpg" alt=""></p>
+<li><p>Request (application/json)</p>
+<pre><code>{
+    &quot;title&quot;: &quot;消息标题&quot;,
+    &quot;description&quot;: &quot;设备变更&quot;,
+    &quot;group_by&quot;: &quot;3&quot;,
+    &quot;topic&quot;:[
+        &quot;client_id1&quot;,&quot;client_id2&quot;, &quot;or tag1&quot;,&quot;or tag2&quot;,&quot;or topic1&quot;
+    ],
+    &quot;url&quot;: &quot;http://www.lianluo.com&quot;,
+    &quot;custom_content&quot;:{
+        &quot;devchange&quot;: &quot;1&quot;
+    }
+}
+</code></pre></li>
+<li><p>Response 201 (application/json)</p>
+<pre><code>{
+      &quot;title&quot;: &quot;消息标题&quot;,
+      &quot;description&quot;: &quot;消息内容&quot;,
+      &quot;notification_builder_id&quot;: 0,
+      &quot;notification_basic_style&quot;: 7,
+      &quot;open_type&quot;: 0,
+      &quot;url&quot;: null,
+      &quot;pkg_content&quot;: null,
+      &quot;custom_content&quot;: null
+}
+</code></pre></li>
+</ul>
+<h2 id="透传消息-bg-messages" class="article-heading"><a href="#透传消息-bg-messages" class="headerlink" title="透传消息 [/bg-messages]"></a>透传消息 [/bg-messages]<a class="article-anchor" href="#透传消息-bg-messages" aria-hidden="true"></a></h2><h3 id="推送-POST-1" class="article-heading"><a href="#推送-POST-1" class="headerlink" title="推送 [POST]"></a>推送 [POST]<a class="article-anchor" href="#推送-POST-1" aria-hidden="true"></a></h3><ul>
+<li><p>Attributes</p>
+<ul>
+<li>title (string) - “消息标题”,</li>
+<li>description (string, required) - “消息内容”,</li>
+<li>group_by (number, required) - 推送方式 0: 所有设备 1: 指定设备 2: 按设备标签推送  3:按主题推送</li>
+<li>url (string, optional) - URL</li>
+<li>custom_content (object) - 自定义字段</li>
+<li>topic (array, required) - 主题数组, 对应group_by. 1: 设备client_id集合 2. 标签集合, 3. 主题集合</li>
+</ul>
 </li>
-<li><p>联系邮箱:  </p>
-<p>zacksleo@gmail.com</p>
-</li>
+<li><p>Request (application/json)</p>
+<pre><code>{
+    &quot;title&quot;: &quot;消息标题&quot;,
+    &quot;description&quot;: &quot;设备变更&quot;,
+    &quot;group_by&quot;: &quot;3&quot;,
+    &quot;topic&quot;:[
+        &quot;client_id1&quot;,&quot;client_id2&quot;, &quot;or tag1&quot;,&quot;or tag2&quot;,&quot;or topic1&quot;
+    ],
+    &quot;url&quot;: &quot;http://www.lianluo.com&quot;,
+    &quot;custom_content&quot;:{
+        &quot;devchange&quot;: &quot;1&quot;
+    }
+}
+</code></pre></li>
+<li><p>Response 201 (application/json)</p>
+<pre><code>{
+      &quot;title&quot;: &quot;消息标题&quot;,
+      &quot;description&quot;: &quot;消息内容&quot;,
+      &quot;notification_builder_id&quot;: 0,
+      &quot;notification_basic_style&quot;: 7,
+      &quot;open_type&quot;: 0,
+      &quot;url&quot;: null,
+      &quot;pkg_content&quot;: null,
+      &quot;custom_content&quot;: null
+}
+</code></pre></li>
 </ul>
 
 
@@ -195,11 +236,7 @@
   </div>
 </nav>
   <!-- Scripts -->
-<!-- build:js build/js/main.js -->
-<script src="/js/lang_select.js"></script>
-<script src="/js/toc.js"></script>
-<script src="/js/mobile_nav.js"></script>
-<!-- endbuild -->
+<script src="/build/js/main-f3ea4c4cec.js"></script>
 <script src="//cdn.jsdelivr.net/retinajs/1.1.0/retina.min.js" async></script>
 
 <script src="/js/tab.js"></script>
