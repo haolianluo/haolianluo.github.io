@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://haolianluo.github.io/zh-cn/docs/account/qrcode-login.html">
+  <link rel="canonical" href="http://haolianluo.github.io//zh-cn/docs/account/authentication-67fc185f2c.html">
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/account/qrcode-login.html">
+      <link rel="alternative" hreflang="zh-cn" href="http://haolianluo.github.io/docs/account/authentication.html">
     
   
   <!-- Icon -->
@@ -18,24 +18,22 @@
   <link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
   <meta name="theme-color" content="#ffffff">
   <!-- CSS -->
-  <!-- build:css build/css/easywechat.css -->
-  <link rel="stylesheet" href="/css/easywechat.css">
-  <!-- endbuild -->
+  <link rel="stylesheet" href="/build/css/easywechat-fb1530d20b.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Mops Docs">
   <!-- Open Graph -->
-  <meta name="description" content="扫码登录设计原理每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器 流程 打开登录页面, 点击扫码登录 APP扫码, 拿到一个U">
+  <meta name="description" content="普遍适用的接口授权及认证规则简介接口授权和认证有许多处理方案, 其中最简单的一种使用appkey和appsecret的方式进行验证 另外还有一种是通过对接口中的参数排序并按照一定加密算法求得哈希值, 作为授权验证的令牌 本文介绍基于OAuth2的通用授权认证规则 简言之, 客户端首先通过一定方式获取访问令牌, 然后在每">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mops Docs">
-<meta property="og:url" content="http://haolianluo.github.io/zh-cn/docs/account/qrcode-login.html">
+<meta property="og:url" content="http://haolianluo.github.io//zh-cn/docs/account/authentication-67fc185f2c.html">
 <meta property="og:site_name" content="Mops Docs">
-<meta property="og:description" content="扫码登录设计原理每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器 流程 打开登录页面, 点击扫码登录 APP扫码, 拿到一个URL, 截取最后部分的ticket 调用接口, 传递ticket, 告知服务器">
+<meta property="og:description" content="普遍适用的接口授权及认证规则简介接口授权和认证有许多处理方案, 其中最简单的一种使用appkey和appsecret的方式进行验证 另外还有一种是通过对接口中的参数排序并按照一定加密算法求得哈希值, 作为授权验证的令牌 本文介绍基于OAuth2的通用授权认证规则 简言之, 客户端首先通过一定方式获取访问令牌, 然后在每次调用接口时, 携带该令牌, 服务端验证该令牌 为什么要使用 部分接口目前没有">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:updated_time" content="2017-11-17T09:35:29.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mops Docs">
-<meta name="twitter:description" content="扫码登录设计原理每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器 流程 打开登录页面, 点击扫码登录 APP扫码, 拿到一个URL, 截取最后部分的ticket 调用接口, 传递ticket, 告知服务器">
+<meta name="twitter:description" content="普遍适用的接口授权及认证规则简介接口授权和认证有许多处理方案, 其中最简单的一种使用appkey和appsecret的方式进行验证 另外还有一种是通过对接口中的参数排序并按照一定加密算法求得哈希值, 作为授权验证的令牌 本文介绍基于OAuth2的通用授权认证规则 简言之, 客户端首先通过一定方式获取访问令牌, 然后在每次调用接口时, 携带该令牌, 服务端验证该令牌 为什么要使用 部分接口目前没有">
   <!-- Swiftype -->
   <meta class="swiftype" name="title" data-type="string" content="Mops Docs">
   <!-- Google Analytics -->
@@ -89,19 +87,36 @@
             <div class="inner">
               <header class="article-header">
                 <h1 class="article-title" itemprop="name"></h1>
-                <a href="https://github.com/haolianluo/docs/edit/zh-cn/account/qrcode-login.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
+                <a href="https://github.com/haolianluo/docs/edit/zh-cn/account/authentication.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i> 改进本文</a>
               </header>
               <div>
                 <strong class="sidebar-title">目录</strong>
-                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#扫码登录"><span class="toc-text">扫码登录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设计原理"><span class="toc-text">设计原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流程"><span class="toc-text">流程</span></a></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#普遍适用的接口授权及认证规则"><span class="toc-text">普遍适用的接口授权及认证规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要使用"><span class="toc-text">为什么要使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#流程"><span class="toc-text">流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特点"><span class="toc-text">特点</span></a></li></ol></li></ol>
               </div>
               <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
-                <!-- --- title: 扫码登录 -->
-<h1 id="扫码登录" class="article-heading"><a href="#扫码登录" class="headerlink" title="扫码登录"></a>扫码登录<a class="article-anchor" href="#扫码登录" aria-hidden="true"></a></h1><h2 id="设计原理" class="article-heading"><a href="#设计原理" class="headerlink" title="设计原理"></a>设计原理<a class="article-anchor" href="#设计原理" aria-hidden="true"></a></h2><p>每次登录, 服务器生成一对ticket, 浏览器端得到ticket-1, APP扫码拿到ticket-2, 这两个ticket为一一对应关系,<br>APP拿着ticket-2, 通过接口告知状态(已扫码和已登录), 服务器通过COMET来通知浏览器</p>
-<h2 id="流程" class="article-heading"><a href="#流程" class="headerlink" title="流程"></a>流程<a class="article-anchor" href="#流程" aria-hidden="true"></a></h2><ul>
-<li>打开登录页面, 点击扫码登录</li>
-<li>APP扫码, 拿到一个URL, 截取最后部分的ticket</li>
-<li>调用接口, 传递ticket, 告知服务器登录状态</li>
+                <!-- --- title: 普遍适用的接口授权及认证规则 -->
+<h2 id="普遍适用的接口授权及认证规则" class="article-heading"><a href="#普遍适用的接口授权及认证规则" class="headerlink" title="普遍适用的接口授权及认证规则"></a>普遍适用的接口授权及认证规则<a class="article-anchor" href="#普遍适用的接口授权及认证规则" aria-hidden="true"></a></h2><h3 id="简介" class="article-heading"><a href="#简介" class="headerlink" title="简介"></a>简介<a class="article-anchor" href="#简介" aria-hidden="true"></a></h3><p>接口授权和认证有许多处理方案, 其中最简单的一种使用appkey和appsecret的方式进行验证</p>
+<p>另外还有一种是通过对接口中的参数排序并按照一定加密算法求得哈希值, 作为授权验证的令牌</p>
+<p>本文介绍基于OAuth2的通用授权认证规则</p>
+<p>简言之, 客户端首先通过一定方式获取访问令牌, 然后在每次调用接口时, 携带该令牌, 服务端验证该令牌</p>
+<h3 id="为什么要使用" class="article-heading"><a href="#为什么要使用" class="headerlink" title="为什么要使用"></a>为什么要使用<a class="article-anchor" href="#为什么要使用" aria-hidden="true"></a></h3><ul>
+<li>部分接口目前没有使用接口认证授权, 接口一旦泄露, 将存在很大安全隐患</li>
+<li>不同项目的接口认证机制不统一, 加重了开发人员的工作负担</li>
+<li>一旦接口泄露, 服务器亦不能及时对相关接口进行封锁</li>
+</ul>
+<h3 id="流程" class="article-heading"><a href="#流程" class="headerlink" title="流程"></a>流程<a class="article-anchor" href="#流程" aria-hidden="true"></a></h3><ul>
+<li>在<strong>用户中心</strong>获取访问令牌, 访问令牌会同步到公用Redis缓存中, 以便其他项目访问</li>
+<li>客户端调用相关查询接口</li>
+<li>服务器通过查询Redis中的令牌, 验证该令牌是否合法, 如果不合法, 提醒客户端重新登录</li>
+<li>令牌验证通过, 服务器执行后续操作, 返回结果</li>
+</ul>
+<h3 id="特点" class="article-heading"><a href="#特点" class="headerlink" title="特点"></a>特点<a class="article-anchor" href="#特点" aria-hidden="true"></a></h3><ul>
+<li>访问令牌存储于公用Redis缓存中, 所有客户端共用一套授权认证机制</li>
+<li>用户在修改/重置密码后, 令牌自动失效, 所有客户端会强制下线, 保证安全性</li>
+<li>与<strong>用户中心</strong>深度结合, 统一注册和登录, 统一授权认证</li>
+<li>Redis可以使用集群进行扩展, 加速授权和访问</li>
+<li>用户信息也将缓存在Redis中, 方便各个项目统一, 快速读取用户信息</li>
+<li>基于OAuth2实现, 服务端可以方便的控制接口的访问权限, 例如一旦client_id和client_secret泄露, 可立即封杀</li>
 </ul>
 
 
@@ -168,11 +183,7 @@
   </div>
 </nav>
   <!-- Scripts -->
-<!-- build:js build/js/main.js -->
-<script src="/js/lang_select.js"></script>
-<script src="/js/toc.js"></script>
-<script src="/js/mobile_nav.js"></script>
-<!-- endbuild -->
+<script src="/build/js/main-f3ea4c4cec.js"></script>
 <script src="//cdn.jsdelivr.net/retinajs/1.1.0/retina.min.js" async></script>
 
 <script src="/js/tab.js"></script>
